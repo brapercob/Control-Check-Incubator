@@ -62,7 +62,7 @@ public class EntrepreneurInvestmentRoundDeleteService implements AbstractDeleteS
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "ticker", "creationDate", "kindOfRound", "title", "description", "amount", "optionalLink");
+		request.unbind(entity, model, "ticker", "creationDate", "kindOfRound", "title", "description", "amount", "optionalLink", "XXXX", "XXXX.description");
 	}
 
 	@Override
@@ -111,6 +111,10 @@ public class EntrepreneurInvestmentRoundDeleteService implements AbstractDeleteS
 				this.repository.deleteAll(messages);
 			}
 			this.repository.delete(forum);
+		}
+		//Borra cascada si tiene.
+		if (entity.getXXXX() != null) {
+			this.repository.delete(entity.getXXXX());
 		}
 
 		this.repository.delete(entity);

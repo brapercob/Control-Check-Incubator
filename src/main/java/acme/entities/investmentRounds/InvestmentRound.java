@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
@@ -22,6 +23,7 @@ import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.validator.constraints.URL;
 
+import acme.entities.XXXXs.XXXX;
 import acme.entities.activities.Activity;
 import acme.entities.roles.Entrepreneur;
 import acme.framework.datatypes.Money;
@@ -72,6 +74,10 @@ public class InvestmentRound extends DomainEntity {
 	@ManyToOne(optional = false)
 	@Valid
 	private Entrepreneur				entrepreneur;
+
+	@OneToOne(optional = true)
+	@Valid
+	private XXXX						XXXX;
 
 
 	@Transient

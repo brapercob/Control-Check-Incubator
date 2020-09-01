@@ -11,6 +11,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.XXXXs.XXXX;
 import acme.entities.customizations.Customization;
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Entrepreneur;
@@ -49,7 +50,7 @@ public class EntrepreneurInvestmentRoundCreateService implements AbstractCreateS
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "ticker", "kindOfRound", "title", "description", "amount", "optionalLink");
+		request.unbind(entity, model, "ticker", "kindOfRound", "title", "description", "amount", "optionalLink", "XXXX.description");
 
 	}
 
@@ -159,6 +160,21 @@ public class EntrepreneurInvestmentRoundCreateService implements AbstractCreateS
 	public void create(final Request<InvestmentRound> request, final InvestmentRound entity) {
 		assert request != null;
 		assert entity != null;
+
+		String XXXXDescription = request.getModel().getString("XXXX.description");
+
+		//NO vacío
+		if (!XXXXDescription.trim().isEmpty()) {
+			XXXX XXXX = new XXXX();
+			XXXX.setDescription(XXXXDescription);
+
+			entity.setXXXX(XXXX);
+
+			this.repository.save(XXXX);
+			//Set a null cuando no se introduzca nada
+		} else {
+			entity.setXXXX(null);
+		}
 
 		Date moment = new Date(System.currentTimeMillis() - 1);
 

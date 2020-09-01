@@ -17,31 +17,34 @@
 
 <acme:form readonly="true">
 
-	<acme:form-textbox code="authenticated.investment-round.form.label.ticker" path="ticker" placeholder="SSS-YY-123456"/>
-	<acme:form-moment code="authenticated.investment-round.form.label.creation-date" path="creationDate"/>
-	<acme:form-textbox code="authenticated.investment-round.form.label.kind-of-round" path="kindOfRound"/>
-	<acme:form-textbox code="authenticated.investment-round.form.label.title" path="title"/>
-	<acme:form-textarea code="authenticated.investment-round.form.label.description" path="description"/>
-	<acme:form-money code="authenticated.investment-round.form.label.amount" path="amount"/>
-	<acme:form-url code="authenticated.investment-round.form.label.optional-link" path="optionalLink"/>
+	<acme:form-textbox code="authenticated.investment-round.form.label.ticker" path="ticker" placeholder="SSS-YY-123456" />
+	<acme:form-moment code="authenticated.investment-round.form.label.creation-date" path="creationDate" />
+	<acme:form-textbox code="authenticated.investment-round.form.label.kind-of-round" path="kindOfRound" />
+	<acme:form-textbox code="authenticated.investment-round.form.label.title" path="title" />
+	<acme:form-textarea code="authenticated.investment-round.form.label.description" path="description" />
+	<acme:form-money code="authenticated.investment-round.form.label.amount" path="amount" />
+	<acme:form-url code="authenticated.investment-round.form.label.optional-link" path="optionalLink" />
+	<jstl:if test="${XXXX != null}">
+		<acme:form-textarea code="authenticated.investment-round.form.label.XXXX" path="XXXX.description" />
+	</jstl:if>
 	
 	<jstl:if test="${isInvestor and applied}">
 		<strong> <acme:message code="authenticated.investment-round.form.label.applied" />
 		</strong>
 	</jstl:if>
-	
+
 	<jstl:if test="${isCreatorInv and isInvestor}">
 		<strong> <acme:message code="authenticated.investment-round.form.is-creator" />
 		</strong>
 	</jstl:if>
-	
-	<acme:form-submit test="${isInvestor and not applied and not isCreatorInv}" method="get" code="authenticated.investment-round.form.button.apply"
-		action="/investor/application/create?invId=${ivID}" />
+
+	<acme:form-submit test="${isInvestor and not applied and not isCreatorInv}" method="get"
+		code="authenticated.investment-round.form.button.apply" action="/investor/application/create?invId=${ivID}" />
 	<acme:form-submit method="get" code="authenticated.investment-round.form.button.work-programme"
 		action="/authenticated/activity/list?id=${ivID}" />
 	<acme:form-submit method="get" code="authenticated.investment-round.form.button.accounting-records"
 		action="/authenticated/accounting-record/list?id=${ivID}" />
 
-	<acme:form-return code="authenticated.investment-round.form.button.return"/>
+	<acme:form-return code="authenticated.investment-round.form.button.return" />
 
 </acme:form>

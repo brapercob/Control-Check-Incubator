@@ -19,6 +19,9 @@ entrepreneur.application.form.label.statement = Declaración
 entrepreneur.application.form.label.investment-offer = Oferta de inversión
 entrepreneur.application.form.label.status = Estado
 entrepreneur.application.form.label.rejectReason = Justificación
+entrepreneur.application.form.label.XXXX-application.offer = Oferta para XXXX
+entrepreneur.application.form.label.XXXX-application.link = Link opcional
+entrepreneur.application.form.label.XXXX-application.password = Contraseña para link
 
 entrepreneur.application.form.label.status.pending = Pendiente
 entrepreneur.application.form.label.status.accept = Aceptar

@@ -6,6 +6,7 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -15,6 +16,7 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import acme.entities.XXXXApplication.XXXXApplication;
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Investor;
 import acme.framework.datatypes.Money;
@@ -53,16 +55,6 @@ public class Application extends DomainEntity {
 	@Size(max = 255)
 	private String				rejectReason;
 
-	@Size(max = 255)
-	private String				XXXXOffer;
-
-	@Size(max = 255)
-	private String				XXXXOfferLink;
-
-	@Size(min = 8, max = 255)
-	@Pattern(regexp = "^(?=(.*[a-zA-Z]){2})(?=(.*[\\W]){2})(?=(.*[0-9]){2}).{8,}$")
-	private String				passwordLink;
-
 	@ManyToOne(optional = false)
 	@NotNull
 	@Valid
@@ -72,5 +64,9 @@ public class Application extends DomainEntity {
 	@NotNull
 	@Valid
 	private Investor			investor;
+
+	@OneToOne(optional = true)
+	@Valid
+	private XXXXApplication		XXXXApplication;
 
 }

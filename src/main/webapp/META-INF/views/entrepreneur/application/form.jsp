@@ -17,11 +17,21 @@
 
 <acme:form>
 
-	<acme:form-textbox code="entrepreneur.application.form.label.investment-ticker" path="investment.ticker" placeholder="SSS-YY-123456" readonly="true" />
+	<acme:form-textbox code="entrepreneur.application.form.label.investment-ticker" path="investment.ticker"
+		placeholder="SSS-YY-123456" readonly="true" />
 	<acme:form-textbox code="entrepreneur.application.form.label.ticker" path="ticker" placeholder="SSS-YY-123456" readonly="true" />
 	<acme:form-moment code="entrepreneur.application.form.label.creation-date" path="creationDate" readonly="true" />
 	<acme:form-textarea code="entrepreneur.application.form.label.statement" path="statement" readonly="true" />
 	<acme:form-money code="entrepreneur.application.form.label.investment-offer" path="investmentOffer" readonly="true" />
+	<%--Tiene offer, se muestra--%>
+	<jstl:if test="${haveXXXXApplication}">
+		<acme:form-textbox code="entrepreneur.application.form.label.XXXX-application.offer" path="XXXXApplication.XXXXOffer"
+			readonly="true" />
+		<acme:form-textbox code="entrepreneur.application.form.label.XXXX-application.link" path="XXXXApplication.XXXXOfferLink"
+			readonly="true" />
+		<acme:form-textbox code="entrepreneur.application.form.label.XXXX-application.password" path="XXXXApplication.passwordLink"
+			readonly="true" />
+	</jstl:if>
 
 	<jstl:if test="${status != 'PENDING' and command == 'show'}">
 		<acme:form-textbox code="entrepreneur.application.form.label.status" path="status" readonly="true" />
@@ -44,5 +54,8 @@
 		action="/entrepreneur/application/update" />
 
 	<acme:form-return code="entrepreneur.application.form.button.return" />
+
+	<input id="haveXXXXApplication" name="haveXXXXApplication" value="${haveXXXXApplication}" type="hidden" />
+
 
 </acme:form>

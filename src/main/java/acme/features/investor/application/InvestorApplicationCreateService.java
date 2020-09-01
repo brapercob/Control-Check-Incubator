@@ -9,6 +9,7 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.XXXXApplication.XXXXApplication;
 import acme.entities.applications.Application;
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Investor;
@@ -63,9 +64,14 @@ public class InvestorApplicationCreateService implements AbstractCreateService<I
 		request.unbind(entity, model, "ticker", "statement", "investmentOffer");
 
 		int investmentID;
+		//Aux variable form para saber si tiene request
+		boolean haveXXXX;
 
 		investmentID = request.getModel().getInteger("invId");
 		model.setAttribute("ivID", investmentID);
+
+		haveXXXX = entity.getInvestment().getXXXX() != null;
+		model.setAttribute("haveXXXX", haveXXXX);
 	}
 
 	@Override
@@ -127,6 +133,30 @@ public class InvestorApplicationCreateService implements AbstractCreateService<I
 		if (tickerIsCorrect && this.repository.findOneApplicationByTicker(entity.getTicker()) != null) {
 			errors.state(request, false, "ticker", "investor.application.error.ticker.exists");
 		}
+
+		//Request no nulo
+		if (entity.getInvestment().getXXXX() != null) {
+
+			//Validates campo offer
+			//Password rellena offer no puede estar vacía
+			if (!errors.hasErrors("XXXXApplication.passwordLink") && !request.getModel().getString("XXXXApplication.passwordLink").isEmpty() && request.getModel().getString("XXXXApplication.XXXXOffer").isEmpty()) {
+				errors.state(request, false, "XXXXApplication.XXXXOffer", "investor.application.error.XXXX-offer-password");
+			}
+			//Link relleno offer no puede estar vacía
+			if (!errors.hasErrors("XXXXApplication.XXXXOfferLink") && !request.getModel().getString("XXXXApplication.XXXXOfferLink").isEmpty() && request.getModel().getString("XXXXApplication.XXXXOffer").isEmpty()) {
+				errors.state(request, false, "XXXXApplication.XXXXOffer", "investor.application.error.XXXX-offer");
+			}
+			//Validates campo link
+			//Password relleno link no puede estar vacío
+			if (!errors.hasErrors("XXXXApplication.passwordLink") && !request.getModel().getString("XXXXApplication.passwordLink").isEmpty() && request.getModel().getString("XXXXApplication.XXXXOfferLink").isEmpty()) {
+				errors.state(request, false, "XXXXApplication.XXXXOfferLink", "investor.application.error.XXXX-link");
+			}
+			//Validate password
+			String pattern = "^(?=(.*[a-zA-Z]){2})(?=(.*[\\W]){2})(?=(.*[0-9]){2}).{8,}$";
+			if (!errors.hasErrors("XXXXApplication.passwordLink") && !request.getModel().getString("XXXXApplication.passwordLink").isEmpty()) {
+				errors.state(request, request.getModel().getString("XXXXApplication.passwordLink").matches(pattern), "XXXXApplication.passwordLink", "investor.application.error.password-pattern");
+			}
+		}
 	}
 
 	@Override
@@ -134,6 +164,41 @@ public class InvestorApplicationCreateService implements AbstractCreateService<I
 		assert request != null;
 		assert entity != null;
 
+		//Comprueba que tenga request y se introduce offer
+		if (entity.getInvestment().getXXXX() != null && !request.getModel().getString("XXXXApplication.XXXXOffer").isEmpty()) {
+
+			String XXXXApplicationOffer = request.getModel().getString("XXXXApplication.XXXXOffer");
+
+			//Inicializamos con offer
+			XXXXApplication XXXXApplication = new XXXXApplication();
+			XXXXApplication.setXXXXOffer(XXXXApplicationOffer);
+
+			//Si se introduce link
+			if (!request.getModel().getString("XXXXApplication.XXXXOfferLink").isEmpty()) {
+
+				//Introducimos link
+				XXXXApplication.setXXXXOfferLink(request.getModel().getString("XXXXApplication.XXXXOfferLink"));
+
+			} else { //Null si no se introduce
+				XXXXApplication.setXXXXOfferLink(null);
+			}
+
+			//Si se introduce password
+			if (!request.getModel().getString("XXXXApplication.passwordLink").isEmpty()) {
+				XXXXApplication.setPasswordLink(request.getModel().getString("XXXXApplication.passwordLink"));
+
+			} else {//Null si no se introduce
+				XXXXApplication.setPasswordLink(null);
+			}
+
+			entity.setXXXXApplication(XXXXApplication);
+
+			this.repository.save(XXXXApplication);
+
+			//No tiene o no se introduce, offer null
+		} else {
+			entity.setXXXXApplication(null);
+		}
 		Date moment = new Date(System.currentTimeMillis() - 1);
 
 		entity.setStatus("PENDING");

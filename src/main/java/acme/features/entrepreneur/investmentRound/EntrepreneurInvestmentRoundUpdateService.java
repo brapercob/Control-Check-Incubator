@@ -50,7 +50,7 @@ public class EntrepreneurInvestmentRoundUpdateService implements AbstractUpdateS
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "creationDate", "ticker", "workProgramme", "entrepreneur");
+		request.bind(entity, errors, "creationDate", "ticker", "workProgramme", "entrepreneur", "XXXX", "XXXX.description");
 	}
 
 	@Override
@@ -59,7 +59,7 @@ public class EntrepreneurInvestmentRoundUpdateService implements AbstractUpdateS
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "ticker", "creationDate", "kindOfRound", "title", "description", "amount", "optionalLink");
+		request.unbind(entity, model, "ticker", "creationDate", "kindOfRound", "title", "description", "amount", "optionalLink", "XXXX", "XXXX.description");
 	}
 
 	@Override

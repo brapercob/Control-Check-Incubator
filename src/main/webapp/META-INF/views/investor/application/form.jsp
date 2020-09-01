@@ -21,25 +21,43 @@
 		<acme:form-textbox code="investor.application.form.label.ticker" path="ticker" placeholder="SSS-YY-123456" />
 		<acme:form-textarea code="investor.application.form.label.statement" path="statement" />
 		<acme:form-money code="investor.application.form.label.investment-offer" path="investmentOffer" />
+
+		<%--Tiene request investment--%>
+		<jstl:if test="${haveXXXX}">
+			<acme:form-textbox code="investor.application.form.label.XXXX-application.offer" path="XXXXApplication.XXXXOffer" />
+			<acme:form-textbox code="investor.application.form.label.XXXX-application.link" path="XXXXApplication.XXXXOfferLink" />
+			<acme:form-textbox code="investor.application.form.label.XXXX-application.password" path="XXXXApplication.passwordLink" />
+		</jstl:if>
 	</jstl:if>
 	<jstl:if test="${command == 'show'}">
-		<acme:form-textbox code="investor.application.form.label.investment-ticker" path="investment.ticker" placeholder="SSS-YY-123456" readonly="true" />
+		<acme:form-textbox code="investor.application.form.label.investment-ticker" path="investment.ticker" placeholder="SSS-YY-123456"
+			readonly="true" />
 		<acme:form-textbox code="investor.application.form.label.ticker" path="ticker" placeholder="SSS-YY-123456" readonly="true" />
 		<acme:form-moment code="investor.application.form.label.creation-date" path="creationDate" readonly="true" />
 		<acme:form-textarea code="investor.application.form.label.statement" path="statement" readonly="true" />
 		<acme:form-money code="investor.application.form.label.investment-offer" path="investmentOffer" readonly="true" />
 		<acme:form-money code="investor.application.form.label.status" path="status" readonly="true" />
+
+		<%--Tiene request investment--%>
+		<jstl:if test="${haveXXXX}">
+			<acme:form-textbox code="investor.application.form.label.XXXX-application.offer" path="XXXXApplication.XXXXOffer" readonly="true" />
+			<acme:form-textbox code="investor.application.form.label.XXXX-application.link" path="XXXXApplication.XXXXOfferLink"
+				readonly="true" />
+			<acme:form-textbox code="investor.application.form.label.XXXX-application.password" path="XXXXApplication.passwordLink"
+				readonly="true" />
+		</jstl:if>
 	</jstl:if>
-	
+
 	<jstl:if test="${status != 'PENDING' and command == 'show'}">
-		<acme:form-textarea  code="investor.application.form.label.rejectReason" path="rejectReason" readonly="true"/>
+		<acme:form-textarea code="investor.application.form.label.rejectReason" path="rejectReason" readonly="true" />
 	</jstl:if>
-	
+
 	<acme:form-submit test="${command == 'create'}" code="investor.application.form.button.apply"
 		action="/investor/application/create?invId=${ivID}" />
 
 	<acme:form-return code="investor.application.form.button.return" />
-	
+
 	<input id="ivID" name="ivID" value="${ivID}" type="hidden" />
+	<input id="haveXXXX" name="haveXXXX" value="${haveXXXX}" type="hidden" />
 
 </acme:form>
