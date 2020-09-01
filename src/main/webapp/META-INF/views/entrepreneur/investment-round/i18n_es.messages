@@ -1,0 +1,35 @@
+# i18n_es.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+entrepreneur.investment-round.list.label.ticker = Ticker
+entrepreneur.investment-round.list.label.title = Título
+entrepreneur.investment-round.list.label.amount = Cantidad
+
+entrepreneur.investment-round.form.label.ticker = Ticker
+entrepreneur.investment-round.form.label.creation-date = Fecha de creación
+entrepreneur.investment-round.form.label.kind-of-round = Tipo de ronda
+entrepreneur.investment-round.form.label.title = Título
+entrepreneur.investment-round.form.label.description = Descripción
+entrepreneur.investment-round.form.label.amount = Cantidad
+entrepreneur.investment-round.form.label.optional-link = Enlace opcional
+
+entrepreneur.investment-round.form.button.activity.create = Añadir actividad
+entrepreneur.investment-round.form.button.work-programme = Ver programa de trabajo
+entrepreneur.investment-round.form.button.accounting-records = Ver registros contables
+
+entrepreneur.investment-round.form.button.update = Actualizar
+entrepreneur.investment-round.form.button.delete = Eliminar
+entrepreneur.investment-round.form.button.create = Crear
+entrepreneur.investment-round.form.button.return = Volver
+
+entrepreneur.investment-round.error.ticker.sector = Los tres primeros carácteres deben ser igual (pero en mayúsculas) a los de tu sector de emprendedor: {0}. En caso de ser uno o dos carácteres, añade una o dos X
+entrepreneur.investment-round.error.ticker.year = En la segunda cadena debe introducir los dos últimos dígitos del año actual
+entrepreneur.investment-round.error.ticker.exists = Elige otro número de ticker, el que has introducido ya está en uso
+entrepreneur.investment-round.error.spam = Esta cadena de texto contiene un porcentaje alto de palabras spam
