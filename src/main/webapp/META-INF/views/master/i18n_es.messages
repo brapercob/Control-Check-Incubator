@@ -78,6 +78,8 @@ master.menu.administrator.shutdown = Parar el sistema
 master.menu.administrator.tool-record.create = Crear Registro de Herramientas
 master.menu.administrator.technology-record.create = Crear Registro de Tecnología
 master.menu.bookkeeper-requester.list = Lista de solicitudes para contable
+master.menu.administrator.dashboard = Tablero
+
 
 # master.menu.authenticated ###################################################
 

@@ -91,6 +91,8 @@
 
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
+			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard/show" />
+			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list" />
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.administrator.customization" action="/administrator/customization/list" />
@@ -179,8 +181,8 @@
 				access="hasRole('Investor')" />
 			<acme:menu-suboption code="master.menu.user-account.bookkeeper-requester" action="/authenticated/bookkeeper-requester/create"
 				access="!hasRole('BookkeeperRequester') && !hasRole('Bookkeeper')" />
-			<acme:menu-suboption code="master.menu.user-account.bookkeeper-requester.general-data" action="/authenticated/bookkeeper-requester/show"
-				access="hasRole('BookkeeperRequester')" />
+			<acme:menu-suboption code="master.menu.user-account.bookkeeper-requester.general-data"
+				action="/authenticated/bookkeeper-requester/show" access="hasRole('BookkeeperRequester')" />
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.sign-out" action="/master/sign-out" access="isAuthenticated()" />

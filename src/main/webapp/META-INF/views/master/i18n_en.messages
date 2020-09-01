@@ -78,6 +78,7 @@ master.menu.administrator.shutdown = Shut down
 master.menu.administrator.tool-record.create = Create Tool Record
 master.menu.administrator.technology-record.create = Create Technology Record
 master.menu.bookkeeper-requester.list = List Bookkeeper Requests
+master.menu.administrator.dashboard = Dashboard
 
 # master.menu.authenticated ###################################################
 
