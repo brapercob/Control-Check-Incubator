@@ -53,6 +53,16 @@ public class Application extends DomainEntity {
 	@Size(max = 255)
 	private String				rejectReason;
 
+	@Size(max = 255)
+	private String				XXXXOffer;
+
+	@Size(max = 255)
+	private String				XXXXOfferLink;
+
+	@Size(min = 8, max = 255)
+	@Pattern(regexp = "^(?=(.*[a-zA-Z]){2})(?=(.*[\\W]){2})(?=(.*[0-9]){2}).{8,}$")
+	private String				passwordLink;
+
 	@ManyToOne(optional = false)
 	@NotNull
 	@Valid
