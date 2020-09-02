@@ -28,10 +28,12 @@
 		<acme:form-textarea code="authenticated.investment-round.form.label.XXXX" path="XXXX.description" />
 	</jstl:if>
 	
+	
 	<jstl:if test="${isInvestor and applied}">
 		<strong> <acme:message code="authenticated.investment-round.form.label.applied" />
 		</strong>
 	</jstl:if>
+
 
 	<jstl:if test="${isCreatorInv and isInvestor}">
 		<strong> <acme:message code="authenticated.investment-round.form.is-creator" />
