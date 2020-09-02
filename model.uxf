@@ -708,7 +708,7 @@ Consumer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1640</x>
+      <x>1712</x>
       <y>840</y>
       <w>432</w>
       <h>128</h>
@@ -746,19 +746,19 @@ bg=orange</panel_attributes>
     <coordinates>
       <x>1464</x>
       <y>880</y>
-      <w>192</w>
+      <w>264</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
 m1=1
 m2=0..*
 has &gt;</panel_attributes>
-    <additional_attributes>10.0;20.0;220.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;310.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1816</x>
+      <x>1888</x>
       <y>504</y>
       <w>88</w>
       <h>352</h>
@@ -900,5 +900,66 @@ BookkeeperRequester
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;590.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1616</x>
+      <y>704</y>
+      <w>248</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+XXXXApplication
+--
++ XXXXOffer: String {Size(max = 255)}
++ XXXXOfferLink: String {URL,Size(max = 255)}
++ passwordLink: String {Size(max = 255)}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1584</x>
+      <y>624</y>
+      <w>112</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=x-&gt;
+m1=1
+m2=0..*
+contains &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1344</x>
+      <y>1152</y>
+      <w>328</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+XXXX
+--
++ description: String {Column(length = 1000), Size(max = 1000)}
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1240</x>
+      <y>968</y>
+      <w>184</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=x-&gt;
+m1=1
+m2=0..1
+has v</panel_attributes>
+    <additional_attributes>10.0;10.0;200.0;230.0</additional_attributes>
   </element>
 </diagram>

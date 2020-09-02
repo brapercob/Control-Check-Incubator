@@ -47,6 +47,7 @@
         `statement` varchar(255),
         `status` varchar(255),
         `ticker` varchar(255),
+        `xxxxapplication_id` integer,
         `investment_id` integer not null,
         `investor_id` integer not null,
         primary key (`id`)
@@ -193,6 +194,7 @@
         `optional_link` varchar(255),
         `ticker` varchar(255),
         `title` varchar(255),
+        `xxxx_id` integer,
         `entrepreneur_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
@@ -314,6 +316,22 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `xxxx` (
+       `id` integer not null,
+        `version` integer not null,
+        `description` varchar(1000),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `xxxxapplication` (
+       `id` integer not null,
+        `version` integer not null,
+        `xxxxoffer` varchar(255),
+        `xxxxoffer_link` varchar(255),
+        `password_link` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `hibernate_sequence` (
        `next_val` bigint
     ) engine=InnoDB;
@@ -353,6 +371,11 @@
        add constraint FK_6lnbc6fo3om54vugoh8icg78m 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `application` 
+       add constraint `FKdgfcty9sy2ra37j6nc9jl7gv1` 
+       foreign key (`xxxxapplication_id`) 
+       references `xxxxapplication` (`id`);
 
     alter table `application` 
        add constraint `FK8txmd9cmj0kfxoa3kpww2tqyy` 
@@ -408,6 +431,11 @@
        add constraint `FKnq4o32i2bs4nxqs0g5q6v2tjc` 
        foreign key (`forum_id`) 
        references `forum` (`id`);
+
+    alter table `investment_round` 
+       add constraint `FK11b90y17vhrgy69lplvxt8fna` 
+       foreign key (`xxxx_id`) 
+       references `xxxx` (`id`);
 
     alter table `investment_round` 
        add constraint `FKkj1l8c2ftn9c65y061me6t37j` 

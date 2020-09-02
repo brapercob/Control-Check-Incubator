@@ -21,6 +21,10 @@
 
     alter table `application` 
        drop 
+       foreign key `FKdgfcty9sy2ra37j6nc9jl7gv1`;
+
+    alter table `application` 
+       drop 
        foreign key `FK8txmd9cmj0kfxoa3kpww2tqyy`;
 
     alter table `application` 
@@ -62,6 +66,10 @@
     alter table `forum_user_account` 
        drop 
        foreign key `FKnq4o32i2bs4nxqs0g5q6v2tjc`;
+
+    alter table `investment_round` 
+       drop 
+       foreign key `FK11b90y17vhrgy69lplvxt8fna`;
 
     alter table `investment_round` 
        drop 
@@ -140,5 +148,9 @@
     drop table if exists `tool_record`;
 
     drop table if exists `user_account`;
+
+    drop table if exists `xxxx`;
+
+    drop table if exists `xxxxapplication`;
 
     drop table if exists `hibernate_sequence`;

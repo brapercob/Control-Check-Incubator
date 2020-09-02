@@ -26,7 +26,7 @@
 		<jstl:if test="${haveXXXX}">
 			<acme:form-textbox code="investor.application.form.label.XXXX-application.offer" path="XXXXApplication.XXXXOffer" />
 			<acme:form-textbox code="investor.application.form.label.XXXX-application.link" path="XXXXApplication.XXXXOfferLink" />
-			<acme:form-textbox code="investor.application.form.label.XXXX-application.password" path="XXXXApplication.passwordLink" />
+			<acme:form-password code="investor.application.form.label.XXXX-application.password" path="XXXXApplication.passwordLink" />
 		</jstl:if>
 	</jstl:if>
 	<jstl:if test="${command == 'show'}">
