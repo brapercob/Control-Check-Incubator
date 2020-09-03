@@ -1,5 +1,5 @@
 
-package acme.entities.XXXXApplication;
+package acme.entities.pagbadApplications;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.Size;
@@ -13,16 +13,16 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class XXXXApplication extends DomainEntity {
+public class PagbadApplication extends DomainEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
 	@Size(max = 255)
-	private String				XXXXOffer;
+	private String				pagbadOffer;
 
 	@Size(max = 255)
 	@URL
-	private String				XXXXOfferLink;
+	private String				pagbadOfferLink;
 
 	@Size(max = 255)
 	private String				passwordLink;

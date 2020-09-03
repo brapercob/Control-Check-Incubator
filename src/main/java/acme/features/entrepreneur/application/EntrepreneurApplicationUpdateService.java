@@ -48,7 +48,7 @@ public class EntrepreneurApplicationUpdateService implements AbstractUpdateServi
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "ticker", "creationDate", "statement", "investmentOffer", "investment", "investor", "XXXXApplication");
+		request.bind(entity, errors, "ticker", "creationDate", "statement", "investmentOffer", "investment", "investor", "pagbadApplication");
 	}
 
 	@Override
@@ -58,14 +58,14 @@ public class EntrepreneurApplicationUpdateService implements AbstractUpdateServi
 		assert model != null;
 
 		//Aux tiene offer
-		boolean haveXXXXApplication;
+		boolean havePagbadApplication;
 
-		haveXXXXApplication = entity.getXXXXApplication() != null;
-		model.setAttribute("haveXXXXApplication", haveXXXXApplication);
+		havePagbadApplication = entity.getPagbadApplication() != null;
+		model.setAttribute("havePagbadApplication", havePagbadApplication);
 
 		//Unbind con offer
-		if (haveXXXXApplication) {
-			request.unbind(entity, model, "ticker", "creationDate", "statement", "investmentOffer", "status", "rejectReason", "investment.ticker", "XXXXApplication.XXXXOffer", "XXXXApplication.XXXXOfferLink", "XXXXApplication.passwordLink");
+		if (havePagbadApplication) {
+			request.unbind(entity, model, "ticker", "creationDate", "statement", "investmentOffer", "status", "rejectReason", "investment.ticker", "pagbadApplication.pagbadOffer", "pagbadApplication.pagbadOfferLink", "pagbadApplication.passwordLink");
 			//Unbind sin offer
 		} else {
 			request.unbind(entity, model, "ticker", "creationDate", "statement", "investmentOffer", "status", "rejectReason", "investment.ticker");

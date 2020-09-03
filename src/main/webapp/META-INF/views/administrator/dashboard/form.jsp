@@ -5,7 +5,7 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:form-double code="administrator.dashboard.form.label.ratioOfInvestmentRoundsWithXXXX" path="ratioOfInvestmentRoundsWithXXXX" />
-	<acme:form-double code="administrator.dashboard.form.label.ratioOfApplicationsWithXXXX" path="ratioOfApplicationsWithXXXX" />
-	<acme:form-double code="administrator.dashboard.form.label.ratioOfApplicationsThatHaveXXXX" path="ratioOfApplicationsThatHaveXXXX" />
+	<acme:form-double code="administrator.dashboard.form.label.ratioOfInvestmentRoundsWithPagbad" path="ratioOfInvestmentRoundsWithPagbad" />
+	<acme:form-double code="administrator.dashboard.form.label.ratioOfApplicationsWithLink" path="ratioOfApplicationsWithLink" />
+	<acme:form-double code="administrator.dashboard.form.label.ratioOfApplicationsThatHavePasswordProtectedLink" path="ratioOfApplicationsThatHavePasswordProtectedLink" />
 </acme:form>

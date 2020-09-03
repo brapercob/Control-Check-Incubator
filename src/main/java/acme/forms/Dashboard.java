@@ -12,8 +12,8 @@ public class Dashboard implements Serializable {
 
 	private static final long	serialVersionUID	= 1L;
 
-	String						ratioOfInvestmentRoundsWithXXXX;
-	String						ratioOfApplicationsWithXXXX;
-	String						ratioOfApplicationsThatHaveXXXX;
+	String						ratioOfInvestmentRoundsWithPagbad;
+	String						ratioOfApplicationsWithLink;
+	String						ratioOfApplicationsThatHavePasswordProtectedLink;
 
 }

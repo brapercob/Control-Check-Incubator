@@ -11,9 +11,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.XXXXs.XXXX;
 import acme.entities.customizations.Customization;
 import acme.entities.investmentRounds.InvestmentRound;
+import acme.entities.pagbads.Pagbad;
 import acme.entities.roles.Entrepreneur;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
@@ -50,7 +50,7 @@ public class EntrepreneurInvestmentRoundCreateService implements AbstractCreateS
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "ticker", "kindOfRound", "title", "description", "amount", "optionalLink", "XXXX.description");
+		request.unbind(entity, model, "ticker", "kindOfRound", "title", "description", "amount", "optionalLink", "pagbad.description");
 
 	}
 
@@ -161,19 +161,19 @@ public class EntrepreneurInvestmentRoundCreateService implements AbstractCreateS
 		assert request != null;
 		assert entity != null;
 
-		String XXXXDescription = request.getModel().getString("XXXX.description");
+		String pagbadDescription = request.getModel().getString("pagbad.description");
 
 		//NO vacío
-		if (!XXXXDescription.trim().isEmpty()) {
-			XXXX XXXX = new XXXX();
-			XXXX.setDescription(XXXXDescription);
+		if (!pagbadDescription.trim().isEmpty()) {
+			Pagbad pagbad = new Pagbad();
+			pagbad.setDescription(pagbadDescription);
 
-			entity.setXXXX(XXXX);
+			entity.setPagbad(pagbad);
 
-			this.repository.save(XXXX);
+			this.repository.save(pagbad);
 			//Set a null cuando no se introduzca nada
 		} else {
-			entity.setXXXX(null);
+			entity.setPagbad(null);
 		}
 
 		Date moment = new Date(System.currentTimeMillis() - 1);

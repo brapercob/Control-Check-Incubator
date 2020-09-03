@@ -36,11 +36,11 @@
 
 		<%--Editable--%>
 		<jstl:if test="${command == 'create'}">
-			<acme:form-textarea code="entrepreneur.investment-round.form.label.XXXX" path="XXXX.description" />
+			<acme:form-textarea code="entrepreneur.investment-round.form.label.pagbad" path="pagbad.description" />
 		</jstl:if>
 		<%--No editable, con request--%>
-		<jstl:if test="${command != 'create' and XXXX != null}">
-			<acme:form-textarea code="entrepreneur.investment-round.form.label.XXXX" path="XXXX.description" readonly="true" />
+		<jstl:if test="${command != 'create' and pagbad != null}">
+			<acme:form-textarea code="entrepreneur.investment-round.form.label.pagbad" path="pagbad.description" readonly="true" />
 		</jstl:if>
 	</jstl:if>
 
@@ -52,8 +52,8 @@
 		<acme:form-money code="entrepreneur.investment-round.form.label.amount" path="amount" readonly="true" />
 		<acme:form-url code="entrepreneur.investment-round.form.label.optional-link" path="optionalLink" readonly="true" />
 		<%--No editable, con request--%>
-		<jstl:if test="${XXXX != null}">
-			<acme:form-textarea code="entrepreneur.investment-round.form.label.XXXX" path="XXXX.description" readonly="true" />
+		<jstl:if test="${pagbad != null}">
+			<acme:form-textarea code="entrepreneur.investment-round.form.label.pagbad" path="pagbad.description" readonly="true" />
 		</jstl:if>
 	</jstl:if>
 

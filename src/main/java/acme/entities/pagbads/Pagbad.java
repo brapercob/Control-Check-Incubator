@@ -1,5 +1,5 @@
 
-package acme.entities.XXXXs;
+package acme.entities.pagbads;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,12 +12,12 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class XXXX extends DomainEntity {
+public class Pagbad extends DomainEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
-	@Column(length = 1000)
-	@Size(max = 1000)
+	@Column(length = 1024)
+	@Size(max = 1024)
 	private String				description;
 
 }

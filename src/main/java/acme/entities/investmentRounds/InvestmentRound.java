@@ -23,8 +23,8 @@ import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.validator.constraints.URL;
 
-import acme.entities.XXXXs.XXXX;
 import acme.entities.activities.Activity;
+import acme.entities.pagbads.Pagbad;
 import acme.entities.roles.Entrepreneur;
 import acme.framework.datatypes.Money;
 import acme.framework.entities.DomainEntity;
@@ -77,7 +77,7 @@ public class InvestmentRound extends DomainEntity {
 
 	@OneToOne(optional = true)
 	@Valid
-	private XXXX						XXXX;
+	private Pagbad						pagbad;
 
 
 	@Transient

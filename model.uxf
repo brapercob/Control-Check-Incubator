@@ -910,10 +910,10 @@ BookkeeperRequester
       <h>80</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
-XXXXApplication
+pagbadApplication
 --
-+ XXXXOffer: String {Size(max = 255)}
-+ XXXXOfferLink: String {URL,Size(max = 255)}
++ pagbadOffer: String {Size(max = 255)}
++ pagbadOfferLink: String {URL,Size(max = 255)}
 + passwordLink: String {Size(max = 255)}
 </panel_attributes>
     <additional_attributes/>
@@ -941,9 +941,9 @@ contains &gt;</panel_attributes>
       <h>64</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
-XXXX
+pagbad
 --
-+ description: String {Column(length = 1000), Size(max = 1000)}
++ description: String {Column(length = 1024), Size(max = 1024)}
 
 </panel_attributes>
     <additional_attributes/>

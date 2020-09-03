@@ -1,4 +1,4 @@
 
-administrator.dashboard.form.label.ratioOfInvestmentRoundsWithXXXX = Ratio of Investment Rounds with XXXX
-administrator.dashboard.form.label.ratioOfApplicationsWithXXXX = Ratio of Applications with XXXX
-administrator.dashboard.form.label.ratioOfApplicationsThatHaveXXXX = Ratio of Applications that have XXXX
+administrator.dashboard.form.label.ratioOfInvestmentRoundsWithPagbad = Ratio of Investment Rounds with pagbad
+administrator.dashboard.form.label.ratioOfApplicationsWithLink = Ratio of Applications with link
+administrator.dashboard.form.label.ratioOfApplicationsThatHavePasswordProtectedLink = Ratio of Applications that have password protected link

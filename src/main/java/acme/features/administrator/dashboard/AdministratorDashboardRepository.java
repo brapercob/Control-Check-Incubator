@@ -9,13 +9,13 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AdministratorDashboardRepository extends AbstractRepository {
 
-	@Query("select count(ir.XXXX.id)/count(ir.id)*100.0 from InvestmentRound ir")
-	Double ratioOfInvestmentRoundsWithXXXX();
+	@Query("select count(ir.pagbad.id)/count(ir.id)*100.0 from InvestmentRound ir")
+	Double ratioOfInvestmentRoundsWithPagbad();
 
-	@Query("select count(a.XXXXApplication.id)/count(a.id)*100.0 from Application a")
-	Double ratioOfApplicationsWithXXXX();
+	@Query("select count(a.pagbadApplication.pagbadOfferLink)/count(a.id)*100.0 from Application a")
+	Double ratioOfApplicationsWithLink();
 
-	@Query("select count(xa.passwordLink)/(select count(a.id) from Application a)*100.0 from XXXXApplication xa")
-	Double ratioOfApplicationsThatHaveXXXX();
+	@Query("select count(pa.passwordLink)/(select count(a.id) from Application a)*100.0 from PagbadApplication pa")
+	Double ratioOfApplicationsThatHavePasswordProtectedLink();
 
 }

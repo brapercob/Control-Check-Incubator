@@ -24,12 +24,12 @@
 	<acme:form-textarea code="entrepreneur.application.form.label.statement" path="statement" readonly="true" />
 	<acme:form-money code="entrepreneur.application.form.label.investment-offer" path="investmentOffer" readonly="true" />
 	<%--Tiene offer, se muestra--%>
-	<jstl:if test="${haveXXXXApplication}">
-		<acme:form-textbox code="entrepreneur.application.form.label.XXXX-application.offer" path="XXXXApplication.XXXXOffer"
+	<jstl:if test="${havePagbadApplication}">
+		<acme:form-textbox code="entrepreneur.application.form.label.pagbad-application.offer" path="pagbadApplication.pagbadOffer"
 			readonly="true" />
-		<acme:form-textbox code="entrepreneur.application.form.label.XXXX-application.link" path="XXXXApplication.XXXXOfferLink"
+		<acme:form-textbox code="entrepreneur.application.form.label.pagbad-application.link" path="pagbadApplication.pagbadOfferLink"
 			readonly="true" />
-		<acme:form-textbox code="entrepreneur.application.form.label.XXXX-application.password" path="XXXXApplication.passwordLink"
+		<acme:form-password code="entrepreneur.application.form.label.pagbad-application.password" path="pagbadApplication.passwordLink"
 			readonly="true" />
 	</jstl:if>
 
@@ -55,7 +55,7 @@
 
 	<acme:form-return code="entrepreneur.application.form.button.return" />
 
-	<input id="haveXXXXApplication" name="haveXXXXApplication" value="${haveXXXXApplication}" type="hidden" />
+	<input id="havePagbadApplication" name="havePagbadApplication" value="${havePagbadApplication}" type="hidden" />
 
 
 </acme:form>

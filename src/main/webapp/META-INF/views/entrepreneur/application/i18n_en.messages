@@ -19,9 +19,9 @@ entrepreneur.application.form.label.statement = Statement
 entrepreneur.application.form.label.investment-offer = Investment offer
 entrepreneur.application.form.label.status = Status
 entrepreneur.application.form.label.rejectReason = Justification
-entrepreneur.application.form.label.XXXX-application.offer = XXXX Offer
-entrepreneur.application.form.label.XXXX-application.link = XXXX Optional link
-entrepreneur.application.form.label.XXXX-application.password = Password for optional link
+entrepreneur.application.form.label.pagbad-application.offer = Offer for pagbad
+entrepreneur.application.form.label.pagbad-application.link = Optional link
+entrepreneur.application.form.label.pagbad-application.password = Password for optional link
 
 entrepreneur.application.form.label.status.pending = Pending
 entrepreneur.application.form.label.status.accept = Accept

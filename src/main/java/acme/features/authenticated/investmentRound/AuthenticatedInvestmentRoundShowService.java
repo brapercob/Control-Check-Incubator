@@ -41,7 +41,7 @@ public class AuthenticatedInvestmentRoundShowService implements AbstractShowServ
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "ticker", "creationDate", "kindOfRound", "title", "description", "amount", "optionalLink", "XXXX", "XXXX.description");
+		request.unbind(entity, model, "ticker", "creationDate", "kindOfRound", "title", "description", "amount", "optionalLink", "pagbad", "pagbad.description");
 
 		int ivID = entity.getId();
 

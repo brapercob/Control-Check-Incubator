@@ -16,8 +16,8 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-import acme.entities.XXXXApplication.XXXXApplication;
 import acme.entities.investmentRounds.InvestmentRound;
+import acme.entities.pagbadApplications.PagbadApplication;
 import acme.entities.roles.Investor;
 import acme.framework.datatypes.Money;
 import acme.framework.entities.DomainEntity;
@@ -67,6 +67,6 @@ public class Application extends DomainEntity {
 
 	@OneToOne(optional = true)
 	@Valid
-	private XXXXApplication		XXXXApplication;
+	private PagbadApplication	pagbadApplication;
 
 }

@@ -47,9 +47,9 @@
         `statement` varchar(255),
         `status` varchar(255),
         `ticker` varchar(255),
-        `xxxxapplication_id` integer,
         `investment_id` integer not null,
         `investor_id` integer not null,
+        `pagbad_application_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -194,8 +194,8 @@
         `optional_link` varchar(255),
         `ticker` varchar(255),
         `title` varchar(255),
-        `xxxx_id` integer,
         `entrepreneur_id` integer not null,
+        `pagbad_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -258,6 +258,22 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `pagbad` (
+       `id` integer not null,
+        `version` integer not null,
+        `description` varchar(1024),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `pagbad_application` (
+       `id` integer not null,
+        `version` integer not null,
+        `pagbad_offer` varchar(255),
+        `pagbad_offer_link` varchar(255),
+        `password_link` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `perez_bulletin` (
        `id` integer not null,
         `version` integer not null,
@@ -316,22 +332,6 @@
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `xxxx` (
-       `id` integer not null,
-        `version` integer not null,
-        `description` varchar(1000),
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `xxxxapplication` (
-       `id` integer not null,
-        `version` integer not null,
-        `xxxxoffer` varchar(255),
-        `xxxxoffer_link` varchar(255),
-        `password_link` varchar(255),
-        primary key (`id`)
-    ) engine=InnoDB;
-
     create table `hibernate_sequence` (
        `next_val` bigint
     ) engine=InnoDB;
@@ -373,11 +373,6 @@
        references `user_account` (`id`);
 
     alter table `application` 
-       add constraint `FKdgfcty9sy2ra37j6nc9jl7gv1` 
-       foreign key (`xxxxapplication_id`) 
-       references `xxxxapplication` (`id`);
-
-    alter table `application` 
        add constraint `FK8txmd9cmj0kfxoa3kpww2tqyy` 
        foreign key (`investment_id`) 
        references `investment_round` (`id`);
@@ -386,6 +381,11 @@
        add constraint `FKl4fp0cd8c008ma79n6w58xhk9` 
        foreign key (`investor_id`) 
        references `investor` (`id`);
+
+    alter table `application` 
+       add constraint `FKf8emmhn1jqtvj7tfnlkewk9rg` 
+       foreign key (`pagbad_application_id`) 
+       references `pagbad_application` (`id`);
 
     alter table `authenticated` 
        add constraint FK_h52w0f3wjoi68b63wv9vwon57 
@@ -433,14 +433,14 @@
        references `forum` (`id`);
 
     alter table `investment_round` 
-       add constraint `FK11b90y17vhrgy69lplvxt8fna` 
-       foreign key (`xxxx_id`) 
-       references `xxxx` (`id`);
-
-    alter table `investment_round` 
        add constraint `FKkj1l8c2ftn9c65y061me6t37j` 
        foreign key (`entrepreneur_id`) 
        references `entrepreneur` (`id`);
+
+    alter table `investment_round` 
+       add constraint `FKghdf2lel17tf8dk6bm3r8ma9i` 
+       foreign key (`pagbad_id`) 
+       references `pagbad` (`id`);
 
     alter table `investor` 
        add constraint FK_dcek5rr514s3rww0yy57vvnpq 

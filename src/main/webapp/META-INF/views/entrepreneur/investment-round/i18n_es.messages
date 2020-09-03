@@ -19,6 +19,7 @@ entrepreneur.investment-round.form.label.title = Título
 entrepreneur.investment-round.form.label.description = Descripción
 entrepreneur.investment-round.form.label.amount = Cantidad
 entrepreneur.investment-round.form.label.optional-link = Enlace opcional
+entrepreneur.investment-round.form.label.pagbad = Pagbad
 
 entrepreneur.investment-round.form.button.activity.create = Añadir actividad
 entrepreneur.investment-round.form.button.work-programme = Ver programa de trabajo

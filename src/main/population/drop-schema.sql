@@ -21,15 +21,15 @@
 
     alter table `application` 
        drop 
-       foreign key `FKdgfcty9sy2ra37j6nc9jl7gv1`;
-
-    alter table `application` 
-       drop 
        foreign key `FK8txmd9cmj0kfxoa3kpww2tqyy`;
 
     alter table `application` 
        drop 
        foreign key `FKl4fp0cd8c008ma79n6w58xhk9`;
+
+    alter table `application` 
+       drop 
+       foreign key `FKf8emmhn1jqtvj7tfnlkewk9rg`;
 
     alter table `authenticated` 
        drop 
@@ -69,11 +69,11 @@
 
     alter table `investment_round` 
        drop 
-       foreign key `FK11b90y17vhrgy69lplvxt8fna`;
+       foreign key `FKkj1l8c2ftn9c65y061me6t37j`;
 
     alter table `investment_round` 
        drop 
-       foreign key `FKkj1l8c2ftn9c65y061me6t37j`;
+       foreign key `FKghdf2lel17tf8dk6bm3r8ma9i`;
 
     alter table `investor` 
        drop 
@@ -139,6 +139,10 @@
 
     drop table if exists `overture`;
 
+    drop table if exists `pagbad`;
+
+    drop table if exists `pagbad_application`;
+
     drop table if exists `perez_bulletin`;
 
     drop table if exists `provider`;
@@ -148,9 +152,5 @@
     drop table if exists `tool_record`;
 
     drop table if exists `user_account`;
-
-    drop table if exists `xxxx`;
-
-    drop table if exists `xxxxapplication`;
 
     drop table if exists `hibernate_sequence`;

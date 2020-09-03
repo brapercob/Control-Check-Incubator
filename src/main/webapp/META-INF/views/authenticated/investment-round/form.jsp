@@ -24,8 +24,8 @@
 	<acme:form-textarea code="authenticated.investment-round.form.label.description" path="description" />
 	<acme:form-money code="authenticated.investment-round.form.label.amount" path="amount" />
 	<acme:form-url code="authenticated.investment-round.form.label.optional-link" path="optionalLink" />
-	<jstl:if test="${XXXX != null}">
-		<acme:form-textarea code="authenticated.investment-round.form.label.XXXX" path="XXXX.description" />
+	<jstl:if test="${pagbad != null}">
+		<acme:form-textarea code="authenticated.investment-round.form.label.pagbad" path="pagbad.description" />
 	</jstl:if>
 	
 	

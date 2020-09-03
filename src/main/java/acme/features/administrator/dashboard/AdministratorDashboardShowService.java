@@ -30,7 +30,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "ratioOfInvestmentRoundsWithXXXX", "ratioOfApplicationsWithXXXX", "ratioOfApplicationsThatHaveXXXX");
+		request.unbind(entity, model, "ratioOfInvestmentRoundsWithPagbad", "ratioOfApplicationsWithLink", "ratioOfApplicationsThatHavePasswordProtectedLink");
 
 	}
 
@@ -41,12 +41,12 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		Dashboard result;
 		result = new Dashboard();
 
-		Double ratioOfInvestmentRoundsWithXXXX = this.repository.ratioOfInvestmentRoundsWithXXXX() != null ? this.repository.ratioOfInvestmentRoundsWithXXXX() : 0.;
-		result.setRatioOfInvestmentRoundsWithXXXX(ratioOfInvestmentRoundsWithXXXX + "%");
-		Double ratioOfApplicationsWithXXXX = this.repository.ratioOfApplicationsWithXXXX() != null ? this.repository.ratioOfApplicationsWithXXXX() : 0.;
-		result.setRatioOfApplicationsWithXXXX(ratioOfApplicationsWithXXXX + "%");
-		Double ratioOfApplicationsThatHaveXXXX = this.repository.ratioOfApplicationsThatHaveXXXX() != null ? this.repository.ratioOfApplicationsThatHaveXXXX() : 0.;
-		result.setRatioOfApplicationsThatHaveXXXX(ratioOfApplicationsThatHaveXXXX + "%");
+		Double ratioOfInvestmentRoundsWithPagbad = this.repository.ratioOfInvestmentRoundsWithPagbad() != null ? this.repository.ratioOfInvestmentRoundsWithPagbad() : 0.;
+		result.setRatioOfInvestmentRoundsWithPagbad(ratioOfInvestmentRoundsWithPagbad + "%");
+		Double ratioOfApplicationsWithLink = this.repository.ratioOfApplicationsWithLink() != null ? this.repository.ratioOfApplicationsWithLink() : 0.;
+		result.setRatioOfApplicationsWithLink(ratioOfApplicationsWithLink + "%");
+		Double ratioOfApplicationsThatHavePasswordProtectedLink = this.repository.ratioOfApplicationsThatHavePasswordProtectedLink() != null ? this.repository.ratioOfApplicationsThatHavePasswordProtectedLink() : 0.;
+		result.setRatioOfApplicationsThatHavePasswordProtectedLink(ratioOfApplicationsThatHavePasswordProtectedLink + "%");
 
 		return result;
 	}

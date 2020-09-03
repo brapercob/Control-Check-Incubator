@@ -9,9 +9,9 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.XXXXApplication.XXXXApplication;
 import acme.entities.applications.Application;
 import acme.entities.investmentRounds.InvestmentRound;
+import acme.entities.pagbadApplications.PagbadApplication;
 import acme.entities.roles.Investor;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
@@ -65,13 +65,13 @@ public class InvestorApplicationCreateService implements AbstractCreateService<I
 
 		int investmentID;
 		//Aux variable form para saber si tiene request
-		boolean haveXXXX;
+		boolean havePagbad;
 
 		investmentID = request.getModel().getInteger("invId");
 		model.setAttribute("ivID", investmentID);
 
-		haveXXXX = entity.getInvestment().getXXXX() != null;
-		model.setAttribute("haveXXXX", haveXXXX);
+		havePagbad = entity.getInvestment().getPagbad() != null;
+		model.setAttribute("havePagbad", havePagbad);
 	}
 
 	@Override
@@ -135,26 +135,26 @@ public class InvestorApplicationCreateService implements AbstractCreateService<I
 		}
 
 		//Request no nulo
-		if (entity.getInvestment().getXXXX() != null) {
+		if (entity.getInvestment().getPagbad() != null) {
 
 			//Validates campo offer
 			//Password rellena offer no puede estar vacía
-			if (!errors.hasErrors("XXXXApplication.passwordLink") && !request.getModel().getString("XXXXApplication.passwordLink").isEmpty() && request.getModel().getString("XXXXApplication.XXXXOffer").isEmpty()) {
-				errors.state(request, false, "XXXXApplication.XXXXOffer", "investor.application.error.XXXX-offer-password");
+			if (!errors.hasErrors("pagbadApplication.passwordLink") && !request.getModel().getString("pagbadApplication.passwordLink").isEmpty() && request.getModel().getString("pagbadApplication.pagbadOffer").isEmpty()) {
+				errors.state(request, false, "pagbadApplication.pagbadOffer", "investor.application.error.pagbad-offer-password");
 			}
 			//Link relleno offer no puede estar vacía
-			if (!errors.hasErrors("XXXXApplication.XXXXOfferLink") && !request.getModel().getString("XXXXApplication.XXXXOfferLink").isEmpty() && request.getModel().getString("XXXXApplication.XXXXOffer").isEmpty()) {
-				errors.state(request, false, "XXXXApplication.XXXXOffer", "investor.application.error.XXXX-offer");
+			if (!errors.hasErrors("pagbadApplication.pagbadOfferLink") && !request.getModel().getString("pagbadApplication.pagbadOfferLink").isEmpty() && request.getModel().getString("pagbadApplication.pagbadOffer").isEmpty()) {
+				errors.state(request, false, "pagbadApplication.pagbadOffer", "investor.application.error.pagbad-offer");
 			}
 			//Validates campo link
 			//Password relleno link no puede estar vacío
-			if (!errors.hasErrors("XXXXApplication.passwordLink") && !request.getModel().getString("XXXXApplication.passwordLink").isEmpty() && request.getModel().getString("XXXXApplication.XXXXOfferLink").isEmpty()) {
-				errors.state(request, false, "XXXXApplication.XXXXOfferLink", "investor.application.error.XXXX-link");
+			if (!errors.hasErrors("pagbadApplication.passwordLink") && !request.getModel().getString("pagbadApplication.passwordLink").isEmpty() && request.getModel().getString("pagbadApplication.pagbadOfferLink").isEmpty()) {
+				errors.state(request, false, "pagbadApplication.pagbadOfferLink", "investor.application.error.pagbad-link");
 			}
 			//Validate password
-			String pattern = "^(?=(.*[a-zA-Z]){2})(?=(.*[\\W]){2})(?=(.*[0-9]){2}).{8,}$";
-			if (!errors.hasErrors("XXXXApplication.passwordLink") && !request.getModel().getString("XXXXApplication.passwordLink").isEmpty()) {
-				errors.state(request, request.getModel().getString("XXXXApplication.passwordLink").matches(pattern), "XXXXApplication.passwordLink", "investor.application.error.password-pattern");
+			String pattern = "^(?=(.*[a-zA-Z]){1})(?=(.*[\\W]){1})(?=(.*[0-9]){1}).{10,}$";
+			if (!errors.hasErrors("pagbadApplication.passwordLink") && !request.getModel().getString("pagbadApplication.passwordLink").isEmpty()) {
+				errors.state(request, request.getModel().getString("pagbadApplication.passwordLink").matches(pattern), "pagbadApplication.passwordLink", "investor.application.error.password-pattern");
 			}
 		}
 	}
@@ -165,39 +165,39 @@ public class InvestorApplicationCreateService implements AbstractCreateService<I
 		assert entity != null;
 
 		//Comprueba que tenga request y se introduce offer
-		if (entity.getInvestment().getXXXX() != null && !request.getModel().getString("XXXXApplication.XXXXOffer").isEmpty()) {
+		if (entity.getInvestment().getPagbad() != null && !request.getModel().getString("pagbadApplication.pagbadOffer").isEmpty()) {
 
-			String XXXXApplicationOffer = request.getModel().getString("XXXXApplication.XXXXOffer");
+			String pagbadApplicationOffer = request.getModel().getString("pagbadApplication.pagbadOffer");
 
 			//Inicializamos con offer
-			XXXXApplication XXXXApplication = new XXXXApplication();
-			XXXXApplication.setXXXXOffer(XXXXApplicationOffer);
+			PagbadApplication pagbadApplication = new PagbadApplication();
+			pagbadApplication.setPagbadOffer(pagbadApplicationOffer);
 
 			//Si se introduce link
-			if (!request.getModel().getString("XXXXApplication.XXXXOfferLink").isEmpty()) {
+			if (!request.getModel().getString("pagbadApplication.pagbadOfferLink").isEmpty()) {
 
 				//Introducimos link
-				XXXXApplication.setXXXXOfferLink(request.getModel().getString("XXXXApplication.XXXXOfferLink"));
+				pagbadApplication.setPagbadOfferLink(request.getModel().getString("pagbadApplication.pagbadOfferLink"));
 
 			} else { //Null si no se introduce
-				XXXXApplication.setXXXXOfferLink(null);
+				pagbadApplication.setPagbadOfferLink(null);
 			}
 
 			//Si se introduce password
-			if (!request.getModel().getString("XXXXApplication.passwordLink").isEmpty()) {
-				XXXXApplication.setPasswordLink(request.getModel().getString("XXXXApplication.passwordLink"));
+			if (!request.getModel().getString("pagbadApplication.passwordLink").isEmpty()) {
+				pagbadApplication.setPasswordLink(request.getModel().getString("pagbadApplication.passwordLink"));
 
 			} else {//Null si no se introduce
-				XXXXApplication.setPasswordLink(null);
+				pagbadApplication.setPasswordLink(null);
 			}
 
-			entity.setXXXXApplication(XXXXApplication);
+			entity.setPagbadApplication(pagbadApplication);
 
-			this.repository.save(XXXXApplication);
+			this.repository.save(pagbadApplication);
 
 			//No tiene o no se introduce, offer null
 		} else {
-			entity.setXXXXApplication(null);
+			entity.setPagbadApplication(null);
 		}
 		Date moment = new Date(System.currentTimeMillis() - 1);
 

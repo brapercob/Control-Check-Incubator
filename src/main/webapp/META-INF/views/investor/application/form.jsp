@@ -23,10 +23,10 @@
 		<acme:form-money code="investor.application.form.label.investment-offer" path="investmentOffer" />
 
 		<%--Tiene request investment--%>
-		<jstl:if test="${haveXXXX}">
-			<acme:form-textbox code="investor.application.form.label.XXXX-application.offer" path="XXXXApplication.XXXXOffer" />
-			<acme:form-textbox code="investor.application.form.label.XXXX-application.link" path="XXXXApplication.XXXXOfferLink" />
-			<acme:form-password code="investor.application.form.label.XXXX-application.password" path="XXXXApplication.passwordLink" />
+		<jstl:if test="${havePagbad}">
+			<acme:form-textbox code="investor.application.form.label.pagbad-application.offer" path="pagbadApplication.pagbadOffer" />
+			<acme:form-textbox code="investor.application.form.label.pagbad-application.link" path="pagbadApplication.pagbadOfferLink" />
+			<acme:form-password code="investor.application.form.label.pagbad-application.password" path="pagbadApplication.passwordLink" />
 		</jstl:if>
 	</jstl:if>
 	<jstl:if test="${command == 'show'}">
@@ -39,11 +39,11 @@
 		<acme:form-money code="investor.application.form.label.status" path="status" readonly="true" />
 
 		<%--Tiene request investment--%>
-		<jstl:if test="${haveXXXX}">
-			<acme:form-textbox code="investor.application.form.label.XXXX-application.offer" path="XXXXApplication.XXXXOffer" readonly="true" />
-			<acme:form-textbox code="investor.application.form.label.XXXX-application.link" path="XXXXApplication.XXXXOfferLink"
+		<jstl:if test="${havePagbad}">
+			<acme:form-textbox code="investor.application.form.label.pagbad-application.offer" path="pagbadApplication.pagbadOffer" readonly="true" />
+			<acme:form-textbox code="investor.application.form.label.pagbad-application.link" path="pagbadApplication.pagbadOfferLink"
 				readonly="true" />
-			<acme:form-textbox code="investor.application.form.label.XXXX-application.password" path="XXXXApplication.passwordLink"
+			<acme:form-textbox code="investor.application.form.label.pagbad-application.password" path="pagbadApplication.passwordLink"
 				readonly="true" />
 		</jstl:if>
 	</jstl:if>
@@ -58,6 +58,6 @@
 	<acme:form-return code="investor.application.form.button.return" />
 
 	<input id="ivID" name="ivID" value="${ivID}" type="hidden" />
-	<input id="haveXXXX" name="haveXXXX" value="${haveXXXX}" type="hidden" />
+	<input id="havePagbad" name="havePagbad" value="${havePagbad}" type="hidden" />
 
 </acme:form>

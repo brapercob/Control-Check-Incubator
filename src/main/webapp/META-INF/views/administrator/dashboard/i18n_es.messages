@@ -1,4 +1,4 @@
 
-administrator.dashboard.form.label.ratioOfInvestmentRoundsWithXXXX = Ratio de rondas de inversión con XXXX
-administrator.dashboard.form.label.ratioOfApplicationsWithXXXX = Ratio de aplicaciones con XXXX
-administrator.dashboard.form.label.ratioOfApplicationsThatHaveXXXX = Ratio de aplicaciones con XXXX
+administrator.dashboard.form.label.ratioOfInvestmentRoundsWithPagbad = Ratio de rondas de inversión con pagbad
+administrator.dashboard.form.label.ratioOfApplicationsWithLink = Ratio de aplicaciones con link
+administrator.dashboard.form.label.ratioOfApplicationsThatHavePasswordProtectedLink = Ratio de aplicaciones con link protegido con contraseña
