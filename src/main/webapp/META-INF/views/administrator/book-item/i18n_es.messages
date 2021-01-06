@@ -1,0 +1,14 @@
+administrator.book.list.label.title = Título
+administrator.book.list.label.authors = Autor
+administrator.book.list.label.genre = Género
+
+administrator.book.form.label.title = Título:
+administrator.book.form.label.authors = Autor:
+administrator.book.form.label.genre = Género:
+administrator.book.form.label.subject = Tema:
+administrator.book.form.label.isbn = ISBN:
+administrator.book.form.label.eisbn = EISBN:
+administrator.book.form.label.language = Lenguaje:
+administrator.book.form.label.numberOfPages = Número de páginas:
+
+administrator.challenge.form.button.return = Volver

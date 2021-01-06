@@ -45,4 +45,7 @@ acme.validation.script = Script expression "{0}" must return true
 acme.validation.customization.threshold.max = Must be less than or equal to 100,0
 acme.validation.customization.threshold.invalid = Invalid value
 
+student.book-item.error.no-books-left = No books left for loan
+student.book-item.error.no-loan-left = Exceeded the number of loans
+
 acme.validation.message.confirmation = You must confirm the post

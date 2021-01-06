@@ -1,31 +1,8 @@
 
-    create table `accounting_record` (
-       `id` integer not null,
-        `version` integer not null,
-        `body` varchar(255),
-        `creation_moment` datetime(6),
-        `status` integer,
-        `title` varchar(255),
-        `bookkeeper_id` integer not null,
-        `investment_round_id` integer not null,
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `activity` (
-       `id` integer not null,
-        `version` integer not null,
-        `budget_amount` double precision,
-        `budget_currency` varchar(255),
-        `end_date_time` datetime(6),
-        `start_date_time` datetime(6),
-        `title` varchar(255),
-        `investment_id` integer not null,
-        primary key (`id`)
-    ) engine=InnoDB;
-
     create table `administrator` (
        `id` integer not null,
         `version` integer not null,
+        `loan_id` integer,
         `user_account_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
@@ -33,291 +10,158 @@
     create table `anonymous` (
        `id` integer not null,
         `version` integer not null,
+        `loan_id` integer,
         `user_account_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `application` (
+    create table `appointment` (
        `id` integer not null,
         `version` integer not null,
-        `creation_date` datetime(6),
-        `investment_offer_amount` double precision,
-        `investment_offer_currency` varchar(255),
-        `reject_reason` varchar(255),
-        `statement` varchar(255),
-        `status` varchar(255),
-        `ticker` varchar(255),
-        `investment_id` integer not null,
-        `investor_id` integer not null,
-        `pagbad_application_id` integer,
+        `date` datetime(6),
+        `student_id` integer not null,
+        `teacher_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
     create table `authenticated` (
        `id` integer not null,
         `version` integer not null,
+        `loan_id` integer,
         `user_account_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `bookkeeper` (
+    create table `book` (
        `id` integer not null,
         `version` integer not null,
-        `user_account_id` integer,
-        `firm_name` varchar(255),
-        `responsibility_statement` varchar(255),
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `bookkeeper_requester` (
-       `id` integer not null,
-        `version` integer not null,
-        `user_account_id` integer,
-        `firm_name` varchar(255),
-        `responsibility_statement` varchar(255),
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `challenge` (
-       `id` integer not null,
-        `version` integer not null,
-        `average_goal` varchar(255),
-        `average_reward_amount` double precision,
-        `average_reward_currency` varchar(255),
-        `deadline` datetime(6),
-        `description` varchar(255),
-        `expert_goal` varchar(255),
-        `expert_reward_amount` double precision,
-        `expert_reward_currency` varchar(255),
-        `rookie_goal` varchar(255),
-        `rookie_reward_amount` double precision,
-        `rookie_reward_currency` varchar(255),
+        `authors` varchar(255),
+        `eisbn` varchar(255),
+        `genre` varchar(255),
+        `isbn` varchar(255),
+        `language` varchar(255),
+        `number_of_pages` integer,
+        `quantity` integer,
+        `subject` varchar(255),
         `title` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `consumer` (
+    create table `book_item` (
        `id` integer not null,
         `version` integer not null,
-        `user_account_id` integer,
-        `company` varchar(255),
-        `sector` varchar(255),
+        `bar_code` varchar(255),
+        `borrowed` datetime(6),
+        `format` integer,
+        `loan_period` integer,
+        `book_id` integer,
+        `borrower_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `customization` (
+    create table `catalog` (
        `id` integer not null,
         `version` integer not null,
-        `activity_sectors` varchar(255),
-        `spam_words` varchar(255),
-        `threshold` double precision,
+        `date` datetime(6),
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `entrepreneur` (
+    create table `library` (
        `id` integer not null,
         `version` integer not null,
-        `user_account_id` integer,
-        `qualification_record` varchar(255),
-        `sector` varchar(255),
-        `skills_record` varchar(255),
-        `start_up_name` varchar(255),
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `escobar_bulletin` (
-       `id` integer not null,
-        `version` integer not null,
-        `author` varchar(255),
-        `country` varchar(255),
-        `link` varchar(255),
-        `moment` datetime(6),
-        `text` varchar(255),
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `forum` (
-       `id` integer not null,
-        `version` integer not null,
-        `title` varchar(255),
-        `creator_id` integer,
-        `investment_id` integer,
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `forum_user_account` (
-       `forum_id` integer not null,
-        `participants_id` integer not null
-    ) engine=InnoDB;
-
-    create table `guerrero_bulletin` (
-       `id` integer not null,
-        `version` integer not null,
-        `moment` datetime(6),
+        `adress` varchar(255),
         `name` varchar(255),
-        `quote` varchar(255),
+        `catalog_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `horrillo_bulletin` (
+    create table `material` (
        `id` integer not null,
         `version` integer not null,
-        `author` varchar(255),
-        `body` varchar(255),
-        `time` datetime(6),
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `inquiry` (
-       `id` integer not null,
-        `version` integer not null,
-        `creation` datetime(6),
-        `deadline` datetime(6),
-        `description` varchar(1000),
-        `email` varchar(255),
-        `max_money_amount` double precision,
-        `max_money_currency` varchar(255),
-        `min_money_amount` double precision,
-        `min_money_currency` varchar(255),
-        `title` varchar(255),
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `investment_round` (
-       `id` integer not null,
-        `version` integer not null,
-        `amount_amount` double precision,
-        `amount_currency` varchar(255),
-        `creation_date` datetime(6),
         `description` varchar(255),
-        `kind_of_round` varchar(255),
-        `optional_link` varchar(255),
-        `ticker` varchar(255),
-        `title` varchar(255),
-        `entrepreneur_id` integer not null,
-        `pagbad_id` integer,
+        `name` varchar(255),
+        `quantity` integer,
+        `stock_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `investor` (
+    create table `room` (
        `id` integer not null,
         `version` integer not null,
+        `capacity` integer,
+        `number` integer,
+        `room_type` integer,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `room_booking` (
+       `id` integer not null,
+        `version` integer not null,
+        `date` datetime(6),
+        `room_id` integer,
+        `teacher_id` integer,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `room_room_booking` (
+       `room_id` integer not null,
+        `room_bookings_id` integer not null
+    ) engine=InnoDB;
+
+    create table `room_teacher` (
+       `room_id` integer not null,
+        `stuff_id` integer not null
+    ) engine=InnoDB;
+
+    create table `stock` (
+       `id` integer not null,
+        `version` integer not null,
+        `date` datetime(6),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `student` (
+       `id` integer not null,
+        `version` integer not null,
+        `loan_id` integer,
         `user_account_id` integer,
-        `activity_sector` varchar(255),
-        `firm_name` varchar(255),
-        `profile` varchar(255),
+        `neptun_code` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `lobato_bulletin` (
+    create table `student_subject` (
+       `student_id` integer not null,
+        `subjects_id` integer not null
+    ) engine=InnoDB;
+
+    create table `subject` (
        `id` integer not null,
         `version` integer not null,
-        `investigation` varchar(255),
-        `moment` datetime(6),
-        `scientist` varchar(255),
+        `grade` double precision,
+        `name` varchar(255),
+        `teacher_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `message` (
-       `id` integer not null,
-        `version` integer not null,
-        `body` varchar(255),
-        `creation_moment` datetime(6),
-        `tags` varchar(255),
-        `title` varchar(255),
-        `forum_id` integer not null,
-        `user_id` integer not null,
-        primary key (`id`)
+    create table `subject_student` (
+       `subject_id` integer not null,
+        `students_id` integer not null
     ) engine=InnoDB;
 
-    create table `notice` (
+    create table `teacher` (
        `id` integer not null,
         `version` integer not null,
-        `body` varchar(255),
-        `creation_date` datetime(6),
-        `deadline` datetime(6),
-        `first_optional_link` varchar(255),
-        `header_picture` varchar(255),
-        `second_optional_link` varchar(255),
-        `title` varchar(255),
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `overture` (
-       `id` integer not null,
-        `version` integer not null,
-        `creation` datetime(6),
-        `deadline` datetime(6),
-        `description` varchar(1000),
-        `email` varchar(255),
-        `max_money_amount` double precision,
-        `max_money_currency` varchar(255),
-        `min_money_amount` double precision,
-        `min_money_currency` varchar(255),
-        `title` varchar(255),
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `pagbad` (
-       `id` integer not null,
-        `version` integer not null,
-        `description` varchar(1024),
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `pagbad_application` (
-       `id` integer not null,
-        `version` integer not null,
-        `pagbad_offer` varchar(255),
-        `pagbad_offer_link` varchar(255),
-        `password_link` varchar(255),
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `perez_bulletin` (
-       `id` integer not null,
-        `version` integer not null,
-        `author` varchar(255),
-        `event` varchar(255),
-        `moment` datetime(6),
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `provider` (
-       `id` integer not null,
-        `version` integer not null,
+        `loan_id` integer,
         `user_account_id` integer,
-        `company` varchar(255),
-        `sector` varchar(255),
+        `consulting_hours` varchar(255),
+        `personal_web` varchar(255),
+        `timetable` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `technology_record` (
-       `id` integer not null,
-        `version` integer not null,
-        `activity_sector` varchar(255),
-        `description` varchar(255),
-        `email` varchar(255),
-        `indication` varchar(255),
-        `inventors_name` varchar(255),
-        `stars_rate` integer,
-        `title` varchar(255),
-        `website` varchar(255),
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `tool_record` (
-       `id` integer not null,
-        `version` integer not null,
-        `activity_sector` varchar(255),
-        `description` varchar(255),
-        `email` varchar(255),
-        `indication` varchar(255),
-        `inventors_name` varchar(255),
-        `stars_rate` integer,
-        `title` varchar(255),
-        `website` varchar(255),
-        primary key (`id`)
+    create table `teacher_room_booking` (
+       `teacher_id` integer not null,
+        `room_bookings_id` integer not null
     ) engine=InnoDB;
 
     create table `user_account` (
@@ -332,35 +176,48 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `visitor` (
+       `id` integer not null,
+        `version` integer not null,
+        `loan_id` integer,
+        `user_account_id` integer,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `worker` (
+       `id` integer not null,
+        `version` integer not null,
+        `loan_id` integer,
+        `user_account_id` integer,
+        `worker_position` integer,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `hibernate_sequence` (
        `next_val` bigint
     ) engine=InnoDB;
 
     insert into `hibernate_sequence` values ( 1 );
 
-    alter table `application` 
-       add constraint UK_ao7wxw7e7mkj6g5q49yq2fw8d unique (`ticker`);
+    alter table `room_room_booking` 
+       add constraint UK_ojd9um00nemh93shpv763nd9y unique (`room_bookings_id`);
 
-    alter table `investment_round` 
-       add constraint UK_408l1ohatdkkut5bkt0eu6ifs unique (`ticker`);
+    alter table `room_teacher` 
+       add constraint UK_4wgscm9yijw1i4cvxal9gtel4 unique (`stuff_id`);
+
+    alter table `student` 
+       add constraint UK_ra180u08m3idhmfcnhyjntujx unique (`neptun_code`);
+
+    alter table `teacher_room_booking` 
+       add constraint UK_fmodp76cesfow2svhtqsqpgu9 unique (`room_bookings_id`);
 
     alter table `user_account` 
        add constraint UK_castjbvpeeus0r8lbpehiu0e4 unique (`username`);
 
-    alter table `accounting_record` 
-       add constraint `FK41jm4vk7runvmg5tderffrele` 
-       foreign key (`bookkeeper_id`) 
-       references `bookkeeper` (`id`);
-
-    alter table `accounting_record` 
-       add constraint `FKk1pmfnppwk0kav7xloy8u71uq` 
-       foreign key (`investment_round_id`) 
-       references `investment_round` (`id`);
-
-    alter table `activity` 
-       add constraint `FKev7kvr6qe9wut886e6ju0o9gs` 
-       foreign key (`investment_id`) 
-       references `investment_round` (`id`);
+    alter table `administrator` 
+       add constraint FK_3fec8r1mh0wyk3263uuisrqgc 
+       foreign key (`loan_id`) 
+       references `book_item` (`id`);
 
     alter table `administrator` 
        add constraint FK_2a5vcjo3stlfcwadosjfq49l1 
@@ -368,96 +225,156 @@
        references `user_account` (`id`);
 
     alter table `anonymous` 
+       add constraint FK_dbtwuuiucwxd0d1yhktcxkamj 
+       foreign key (`loan_id`) 
+       references `book_item` (`id`);
+
+    alter table `anonymous` 
        add constraint FK_6lnbc6fo3om54vugoh8icg78m 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
-    alter table `application` 
-       add constraint `FK8txmd9cmj0kfxoa3kpww2tqyy` 
-       foreign key (`investment_id`) 
-       references `investment_round` (`id`);
+    alter table `appointment` 
+       add constraint `FKlipf4217uc7y57b3suqll1d66` 
+       foreign key (`student_id`) 
+       references `student` (`id`);
 
-    alter table `application` 
-       add constraint `FKl4fp0cd8c008ma79n6w58xhk9` 
-       foreign key (`investor_id`) 
-       references `investor` (`id`);
+    alter table `appointment` 
+       add constraint `FKjdfdy7qb421u3xh85jdrh45aw` 
+       foreign key (`teacher_id`) 
+       references `teacher` (`id`);
 
-    alter table `application` 
-       add constraint `FKf8emmhn1jqtvj7tfnlkewk9rg` 
-       foreign key (`pagbad_application_id`) 
-       references `pagbad_application` (`id`);
+    alter table `authenticated` 
+       add constraint FK_c9454l3gwuhevkqx2dsy17sas 
+       foreign key (`loan_id`) 
+       references `book_item` (`id`);
 
     alter table `authenticated` 
        add constraint FK_h52w0f3wjoi68b63wv9vwon57 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
-    alter table `bookkeeper` 
-       add constraint FK_krvjp9eaqyapewl2igugbo9o8 
+    alter table `book_item` 
+       add constraint `FKdqroshm5h57aasm5vnc9ffh2s` 
+       foreign key (`book_id`) 
+       references `book` (`id`);
+
+    alter table `book_item` 
+       add constraint `FKhsetrring4b9luho0l7xu1qva` 
+       foreign key (`borrower_id`) 
+       references `user_account` (`id`);
+
+    alter table `library` 
+       add constraint `FKguxmbvqnipm81b84i6fs87tre` 
+       foreign key (`catalog_id`) 
+       references `catalog` (`id`);
+
+    alter table `material` 
+       add constraint `FKfcokotslx7at8hnsadm0qr6nd` 
+       foreign key (`stock_id`) 
+       references `stock` (`id`);
+
+    alter table `room_booking` 
+       add constraint `FKjdiw4p3kpddibwc07sguaj2ye` 
+       foreign key (`room_id`) 
+       references `room` (`id`);
+
+    alter table `room_booking` 
+       add constraint `FKg1j04tl5s8b7suiji8tqmhka3` 
+       foreign key (`teacher_id`) 
+       references `teacher` (`id`);
+
+    alter table `room_room_booking` 
+       add constraint `FK1k1q72dn95sa344f1fg92ppj3` 
+       foreign key (`room_bookings_id`) 
+       references `room_booking` (`id`);
+
+    alter table `room_room_booking` 
+       add constraint `FKoatfc6ayi1sl45d74crm1rd7` 
+       foreign key (`room_id`) 
+       references `room` (`id`);
+
+    alter table `room_teacher` 
+       add constraint `FKhik1b0ufw3fxuy69scl1mdvw0` 
+       foreign key (`stuff_id`) 
+       references `teacher` (`id`);
+
+    alter table `room_teacher` 
+       add constraint `FK1mtqq2h7x68tsvtiisppqkh3x` 
+       foreign key (`room_id`) 
+       references `room` (`id`);
+
+    alter table `student` 
+       add constraint FK_d5ujc2da6ll97meye77u0n8l7 
+       foreign key (`loan_id`) 
+       references `book_item` (`id`);
+
+    alter table `student` 
+       add constraint FK_39b5mf1i5ggh6xowxc8kmf72e 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
-    alter table `bookkeeper_requester` 
-       add constraint FK_al0n479xs5mn1l0btqrf1dntu 
+    alter table `student_subject` 
+       add constraint `FKl6sohxs09eyxalfpge4isika1` 
+       foreign key (`subjects_id`) 
+       references `subject` (`id`);
+
+    alter table `student_subject` 
+       add constraint `FK3oip65fbnwpxc4o5uvntna85c` 
+       foreign key (`student_id`) 
+       references `student` (`id`);
+
+    alter table `subject` 
+       add constraint `FKejdt93h3bkqtvbmntqgwh9pmq` 
+       foreign key (`teacher_id`) 
+       references `teacher` (`id`);
+
+    alter table `subject_student` 
+       add constraint `FKk7j5icy1r0bs1euj5qrc37c6d` 
+       foreign key (`students_id`) 
+       references `student` (`id`);
+
+    alter table `subject_student` 
+       add constraint `FKhw65fyi3th4dii12e3fsf34mp` 
+       foreign key (`subject_id`) 
+       references `subject` (`id`);
+
+    alter table `teacher` 
+       add constraint FK_rskme9swyx4rli055ud3dqqag 
+       foreign key (`loan_id`) 
+       references `book_item` (`id`);
+
+    alter table `teacher` 
+       add constraint FK_6cgjhg4u98dl7sfkbse4iw9s7 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
-    alter table `consumer` 
-       add constraint FK_6cyha9f1wpj0dpbxrrjddrqed 
+    alter table `teacher_room_booking` 
+       add constraint `FKma7rg87lclgmo2rbfb5a9knuj` 
+       foreign key (`room_bookings_id`) 
+       references `room_booking` (`id`);
+
+    alter table `teacher_room_booking` 
+       add constraint `FKsu4bhsga05y1s6v9tqpxen7l6` 
+       foreign key (`teacher_id`) 
+       references `teacher` (`id`);
+
+    alter table `visitor` 
+       add constraint FK_kfysae9aw2ah5oy1x446cysk7 
+       foreign key (`loan_id`) 
+       references `book_item` (`id`);
+
+    alter table `visitor` 
+       add constraint FK_4h618upfy4548hmjo9yxi33tw 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
-    alter table `entrepreneur` 
-       add constraint FK_r6tqltqvrlh1cyy8rsj5pev1q 
-       foreign key (`user_account_id`) 
-       references `user_account` (`id`);
+    alter table `worker` 
+       add constraint FK_ovmi2o23hknh7hjklolkn0ri9 
+       foreign key (`loan_id`) 
+       references `book_item` (`id`);
 
-    alter table `forum` 
-       add constraint `FKmjij2r3vmcex49205x7iqck3f` 
-       foreign key (`creator_id`) 
-       references `user_account` (`id`);
-
-    alter table `forum` 
-       add constraint `FK4qtg14p3fwsfmdtq4a5wntrln` 
-       foreign key (`investment_id`) 
-       references `investment_round` (`id`);
-
-    alter table `forum_user_account` 
-       add constraint `FKermoy5gpxayu16qpts3vcfkej` 
-       foreign key (`participants_id`) 
-       references `user_account` (`id`);
-
-    alter table `forum_user_account` 
-       add constraint `FKnq4o32i2bs4nxqs0g5q6v2tjc` 
-       foreign key (`forum_id`) 
-       references `forum` (`id`);
-
-    alter table `investment_round` 
-       add constraint `FKkj1l8c2ftn9c65y061me6t37j` 
-       foreign key (`entrepreneur_id`) 
-       references `entrepreneur` (`id`);
-
-    alter table `investment_round` 
-       add constraint `FKghdf2lel17tf8dk6bm3r8ma9i` 
-       foreign key (`pagbad_id`) 
-       references `pagbad` (`id`);
-
-    alter table `investor` 
-       add constraint FK_dcek5rr514s3rww0yy57vvnpq 
-       foreign key (`user_account_id`) 
-       references `user_account` (`id`);
-
-    alter table `message` 
-       add constraint `FKfwwpivgx5j4vw4594dgrw884q` 
-       foreign key (`forum_id`) 
-       references `forum` (`id`);
-
-    alter table `message` 
-       add constraint `FK9o6wsmyyjow8oqtoxdp3iein9` 
-       foreign key (`user_id`) 
-       references `user_account` (`id`);
-
-    alter table `provider` 
-       add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 
+    alter table `worker` 
+       add constraint FK_l5q1f33vs2drypmbdhpdgwfv3 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);

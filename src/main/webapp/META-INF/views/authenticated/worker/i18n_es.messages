@@ -1,0 +1,11 @@
+
+authenticated.worker.worker.form.title.create = Convertirse en trabajador
+authenticated.worker.worker.form.title.update = Actualizar información
+
+
+authenticated.worker.form.label.personal-web = Posición de trabajador
+
+
+authenticated.worker.form.button.create = Registrar
+authenticated.worker.form.button.update = Actualizar
+authenticated.worker.form.button.return = Volver

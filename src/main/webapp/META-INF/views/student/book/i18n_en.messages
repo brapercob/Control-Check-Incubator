@@ -1,0 +1,17 @@
+student.book.list.label.title = Title
+student.book.list.label.authors = Author
+student.book.list.label.genre = Genre
+
+student.book.form.label.title = Title:
+student.book.form.label.authors = Author:
+student.book.form.label.genre = Genre:
+student.book.form.label.subject = Subject:
+student.book.form.label.isbn = ISBN:
+student.book.form.label.eisbn = EISBN:
+student.book.form.label.language = Language:
+student.book.form.label.numberOfPages = Number of pages:
+student.book.form.label.quantity = Quantity:
+
+student.book.form.button.book-item.create = Borrow book
+
+student.challenge.form.button.return = Return

@@ -1,15 +1,7 @@
 
-    alter table `accounting_record` 
+    alter table `administrator` 
        drop 
-       foreign key `FK41jm4vk7runvmg5tderffrele`;
-
-    alter table `accounting_record` 
-       drop 
-       foreign key `FKk1pmfnppwk0kav7xloy8u71uq`;
-
-    alter table `activity` 
-       drop 
-       foreign key `FKev7kvr6qe9wut886e6ju0o9gs`;
+       foreign key FK_3fec8r1mh0wyk3263uuisrqgc;
 
     alter table `administrator` 
        drop 
@@ -17,140 +9,172 @@
 
     alter table `anonymous` 
        drop 
+       foreign key FK_dbtwuuiucwxd0d1yhktcxkamj;
+
+    alter table `anonymous` 
+       drop 
        foreign key FK_6lnbc6fo3om54vugoh8icg78m;
 
-    alter table `application` 
+    alter table `appointment` 
        drop 
-       foreign key `FK8txmd9cmj0kfxoa3kpww2tqyy`;
+       foreign key `FKlipf4217uc7y57b3suqll1d66`;
 
-    alter table `application` 
+    alter table `appointment` 
        drop 
-       foreign key `FKl4fp0cd8c008ma79n6w58xhk9`;
+       foreign key `FKjdfdy7qb421u3xh85jdrh45aw`;
 
-    alter table `application` 
+    alter table `authenticated` 
        drop 
-       foreign key `FKf8emmhn1jqtvj7tfnlkewk9rg`;
+       foreign key FK_c9454l3gwuhevkqx2dsy17sas;
 
     alter table `authenticated` 
        drop 
        foreign key FK_h52w0f3wjoi68b63wv9vwon57;
 
-    alter table `bookkeeper` 
+    alter table `book_item` 
        drop 
-       foreign key FK_krvjp9eaqyapewl2igugbo9o8;
+       foreign key `FKdqroshm5h57aasm5vnc9ffh2s`;
 
-    alter table `bookkeeper_requester` 
+    alter table `book_item` 
        drop 
-       foreign key FK_al0n479xs5mn1l0btqrf1dntu;
+       foreign key `FKhsetrring4b9luho0l7xu1qva`;
 
-    alter table `consumer` 
+    alter table `library` 
        drop 
-       foreign key FK_6cyha9f1wpj0dpbxrrjddrqed;
+       foreign key `FKguxmbvqnipm81b84i6fs87tre`;
 
-    alter table `entrepreneur` 
+    alter table `material` 
        drop 
-       foreign key FK_r6tqltqvrlh1cyy8rsj5pev1q;
+       foreign key `FKfcokotslx7at8hnsadm0qr6nd`;
 
-    alter table `forum` 
+    alter table `room_booking` 
        drop 
-       foreign key `FKmjij2r3vmcex49205x7iqck3f`;
+       foreign key `FKjdiw4p3kpddibwc07sguaj2ye`;
 
-    alter table `forum` 
+    alter table `room_booking` 
        drop 
-       foreign key `FK4qtg14p3fwsfmdtq4a5wntrln`;
+       foreign key `FKg1j04tl5s8b7suiji8tqmhka3`;
 
-    alter table `forum_user_account` 
+    alter table `room_room_booking` 
        drop 
-       foreign key `FKermoy5gpxayu16qpts3vcfkej`;
+       foreign key `FK1k1q72dn95sa344f1fg92ppj3`;
 
-    alter table `forum_user_account` 
+    alter table `room_room_booking` 
        drop 
-       foreign key `FKnq4o32i2bs4nxqs0g5q6v2tjc`;
+       foreign key `FKoatfc6ayi1sl45d74crm1rd7`;
 
-    alter table `investment_round` 
+    alter table `room_teacher` 
        drop 
-       foreign key `FKkj1l8c2ftn9c65y061me6t37j`;
+       foreign key `FKhik1b0ufw3fxuy69scl1mdvw0`;
 
-    alter table `investment_round` 
+    alter table `room_teacher` 
        drop 
-       foreign key `FKghdf2lel17tf8dk6bm3r8ma9i`;
+       foreign key `FK1mtqq2h7x68tsvtiisppqkh3x`;
 
-    alter table `investor` 
+    alter table `student` 
        drop 
-       foreign key FK_dcek5rr514s3rww0yy57vvnpq;
+       foreign key FK_d5ujc2da6ll97meye77u0n8l7;
 
-    alter table `message` 
+    alter table `student` 
        drop 
-       foreign key `FKfwwpivgx5j4vw4594dgrw884q`;
+       foreign key FK_39b5mf1i5ggh6xowxc8kmf72e;
 
-    alter table `message` 
+    alter table `student_subject` 
        drop 
-       foreign key `FK9o6wsmyyjow8oqtoxdp3iein9`;
+       foreign key `FKl6sohxs09eyxalfpge4isika1`;
 
-    alter table `provider` 
+    alter table `student_subject` 
        drop 
-       foreign key FK_b1gwnjqm6ggy9yuiqm0o4rlmd;
+       foreign key `FK3oip65fbnwpxc4o5uvntna85c`;
 
-    drop table if exists `accounting_record`;
+    alter table `subject` 
+       drop 
+       foreign key `FKejdt93h3bkqtvbmntqgwh9pmq`;
 
-    drop table if exists `activity`;
+    alter table `subject_student` 
+       drop 
+       foreign key `FKk7j5icy1r0bs1euj5qrc37c6d`;
+
+    alter table `subject_student` 
+       drop 
+       foreign key `FKhw65fyi3th4dii12e3fsf34mp`;
+
+    alter table `teacher` 
+       drop 
+       foreign key FK_rskme9swyx4rli055ud3dqqag;
+
+    alter table `teacher` 
+       drop 
+       foreign key FK_6cgjhg4u98dl7sfkbse4iw9s7;
+
+    alter table `teacher_room_booking` 
+       drop 
+       foreign key `FKma7rg87lclgmo2rbfb5a9knuj`;
+
+    alter table `teacher_room_booking` 
+       drop 
+       foreign key `FKsu4bhsga05y1s6v9tqpxen7l6`;
+
+    alter table `visitor` 
+       drop 
+       foreign key FK_kfysae9aw2ah5oy1x446cysk7;
+
+    alter table `visitor` 
+       drop 
+       foreign key FK_4h618upfy4548hmjo9yxi33tw;
+
+    alter table `worker` 
+       drop 
+       foreign key FK_ovmi2o23hknh7hjklolkn0ri9;
+
+    alter table `worker` 
+       drop 
+       foreign key FK_l5q1f33vs2drypmbdhpdgwfv3;
 
     drop table if exists `administrator`;
 
     drop table if exists `anonymous`;
 
-    drop table if exists `application`;
+    drop table if exists `appointment`;
 
     drop table if exists `authenticated`;
 
-    drop table if exists `bookkeeper`;
+    drop table if exists `book`;
 
-    drop table if exists `bookkeeper_requester`;
+    drop table if exists `book_item`;
 
-    drop table if exists `challenge`;
+    drop table if exists `catalog`;
 
-    drop table if exists `consumer`;
+    drop table if exists `library`;
 
-    drop table if exists `customization`;
+    drop table if exists `material`;
 
-    drop table if exists `entrepreneur`;
+    drop table if exists `room`;
 
-    drop table if exists `escobar_bulletin`;
+    drop table if exists `room_booking`;
 
-    drop table if exists `forum`;
+    drop table if exists `room_room_booking`;
 
-    drop table if exists `forum_user_account`;
+    drop table if exists `room_teacher`;
 
-    drop table if exists `guerrero_bulletin`;
+    drop table if exists `stock`;
 
-    drop table if exists `horrillo_bulletin`;
+    drop table if exists `student`;
 
-    drop table if exists `inquiry`;
+    drop table if exists `student_subject`;
 
-    drop table if exists `investment_round`;
+    drop table if exists `subject`;
 
-    drop table if exists `investor`;
+    drop table if exists `subject_student`;
 
-    drop table if exists `lobato_bulletin`;
+    drop table if exists `teacher`;
 
-    drop table if exists `message`;
-
-    drop table if exists `notice`;
-
-    drop table if exists `overture`;
-
-    drop table if exists `pagbad`;
-
-    drop table if exists `pagbad_application`;
-
-    drop table if exists `perez_bulletin`;
-
-    drop table if exists `provider`;
-
-    drop table if exists `technology_record`;
-
-    drop table if exists `tool_record`;
+    drop table if exists `teacher_room_booking`;
 
     drop table if exists `user_account`;
+
+    drop table if exists `visitor`;
+
+    drop table if exists `worker`;
 
     drop table if exists `hibernate_sequence`;

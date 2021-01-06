@@ -3,7 +3,7 @@
 <!--
 - initial-data.xml
 -
-- Copyright (c) 2019 Rafael Corchuelo.
+- Copyright (c) 2020 Brayan Nicolás Pérez Cobos
 -
 - In keeping with the traditional purpose of furthering education and research, it is
 - the policy of the copyright owner to permit non-commercial use and redistribution of
@@ -73,12 +73,5 @@
 		<property name="userAccount" ref="administratorUserAccount" />
 	</bean>
 
-	<!-- Spam words -->
-	
-	<bean id="customization" class="acme.entities.customizations.Customization">
-		<property name="spamWords" value="sex;sexo;hard core;viagra;cialis;nigeria;you've won;has ganado;million dollar;millon de dolares" />
-		<property name="threshold" value="2.50"/>
-		<property name="activitySectors" value="Technology;Science;Arts;Business;Health"/>
-	</bean>
 	
 </beans>

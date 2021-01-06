@@ -1,0 +1,12 @@
+
+authenticated.teacher.teacher.form.title.create = Become an teacher
+authenticated.teacher.teacher.form.title.update = Update teacher data
+
+
+authenticated.teacher.form.label.personal-web = Personal web
+
+
+
+authenticated.teacher.form.button.create = Register
+authenticated.teacher.form.button.update = Update
+authenticated.teacher.form.button.return = Return

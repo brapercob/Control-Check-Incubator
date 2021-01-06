@@ -1,0 +1,11 @@
+
+authenticated.teacher.teacher.form.title.create = Convertirse en profesor
+authenticated.teacher.teacher.form.title.update = Actualizar información
+
+
+authenticated.teacher.form.label.personal-web = Web Personal
+
+
+authenticated.teacher.form.button.create = Registrar
+authenticated.teacher.form.button.update = Actualizar
+authenticated.teacher.form.button.return = Volver

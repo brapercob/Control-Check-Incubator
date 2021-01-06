@@ -1,0 +1,18 @@
+
+student.book-item.form.label.bar-code = Bar code:
+student.book-item.form.label.borrowed = Borrowed date:
+student.book-item.form.label.format = Format:
+student.book-item.form.label.format.audio-book = Audio Book
+student.book-item.form.label.format.hard-cover = Hard Cover
+student.book-item.form.label.format.soft-cover = Soft Cover
+student.book-item.form.label.format.pdf = PDF
+student.book-item.form.label.loan-period = Loan Period:
+student.book-item.form.label.borrower = Borrower:
+student.book-item.form.label.book = Book:
+
+student.book-item.list.label.loan-period = Loan Period
+student.book-item.list.label.book = Book Title
+student.book-item.list.label.borrowed = Borrow date
+
+student.book-item.form.button.create = Create
+student.book-item.form.button.return = Return
