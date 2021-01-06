@@ -1,0 +1,14 @@
+
+student.book-item.form.label.bar-code = Código de barras:
+student.book-item.form.label.borrowed = Fecha de préstamo:
+student.book-item.form.label.format = Formato:
+student.book-item.form.label.loan-period = Periodo de préstamo:
+student.book-item.form.label.borrower = Prestado a:
+student.book-item.form.label.book = Libro:
+
+student.book-item.list.label.loan-period = Periodo de préstamo
+student.book-item.list.label.book = Título de libro
+student.book-item.list.label.borrowed = Fecha de préstamo
+
+student.book-item.form.button.create = Crear
+student.book-item.form.button.return = Volver

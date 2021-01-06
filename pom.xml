@@ -3,13 +3,9 @@
 <!--
 - pom.xml
 -
-- Copyright (c) 2019 Rafael Corchuelo.
+- Copyright (c) 2020 Brayan Nicolás Pérez Cobos
 -
-- In keeping with the traditional purpose of furthering education and research, it is
-- the policy of the copyright owner to permit non-commercial use and redistribution of
-- this software. It has been tested carefully, but it is not guaranteed for any particular
-- purposes.  The copyright owner does not offer any warranties or representations, nor do
-- they accept any liabilities with respect to them.
+
 -->
 
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -17,13 +13,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>acme</groupId>
-	<artifactId>acme-incubator</artifactId>
+	<groupId>iit</groupId>
+	<artifactId>iit-web</artifactId>
 	<version>5.0</version>
 	<packaging>war</packaging>
 
-	<name>Acme-Incubator</name>
-	<description>This is the Acme Incubator project of subject Design &amp; Testing.</description>
+	<name>iit-web</name>
+	<description>This is the iit-web project of subject web technologies.</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

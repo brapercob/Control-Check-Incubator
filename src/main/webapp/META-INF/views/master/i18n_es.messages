@@ -1,0 +1,85 @@
+
+# master.banner.welcome #######################################################
+
+master.banner.background = #FFFFFF
+
+﻿# master.welcome ##############################################################
+
+master.welcome.title = ¡Bienvenidos!
+master.welcome.text = \
+	¡Bienvenidos a IIT Library!
+
+# master.menu #################################################################
+
+master.menu.home = Inicio
+master.menu.sign-up = Registrarse
+master.menu.sign-in = Entrar
+master.menu.sign-out = Salir
+
+
+# master.menu.student #########################################################
+
+master.menu.student = Estudiante
+master.menu.student.book = Lista de libros
+master.menu.student.list-mine = Mis préstamos
+
+# master.menu.anonymous #######################################################
+
+master.menu.anonymous = Anónimo
+
+
+
+# master.menu.administrator ###################################################
+
+master.menu.administrator = Administrador
+master.menu.administrator.book = Lista de libros
+master.menu.administrator.book.create = Añadir libro
+
+
+# master.menu.authenticated ###################################################
+
+master.menu.administrator.shutdown = Shutdown
+master.menu.authenticated = Autenticado
+
+
+# master.menu.user-account ####################################################
+
+master.menu.user-account = Cuenta
+master.menu.user-account.general-data = Datos generales
+master.menu.user-account.student = Datos de estudiante
+master.menu.user-account.become-student = Convertirse en estudiante
+master.menu.user-account.worker = Datos de trabajador
+master.menu.user-account.become-worker = Convertirse en trabajador
+master.menu.user-account.become-teacher = Convertirse en profesor
+master.menu.user-account.teacher = Datos de profesor
+
+
+﻿# master.footer ###############################################################
+
+master.footer.title.about = Nosotros
+master.footer.label.company = La empresa
+master.footer.label.license = Licencia
+master.footer.title.social = Social
+master.footer.label.linked-in = Linked-In
+master.footer.label.twitter = Twitter
+master.footer.title.languages = Lenguages
+master.footer.label.english = Inglés
+master.footer.label.spanish = Español
+
+# master.company ##############################################################
+
+master.company.title = La compañía
+master.company.text = \
+	IIT Library, provided by Univesity of Miskolc
+master.company.name = IIT Library
+master.company.address = 3515 Miskolc-University City.
+master.company.phone = +36 46 565 333
+master.company.email = gkint@uni-miskolc.hu
+
+# master.license ##############################################################
+
+master.license.title = Licencia
+master.license.text = \
+	Puede usar este sistema de forma completamente gratuita respetando las leyes \
+	que sean aplicables.
+	

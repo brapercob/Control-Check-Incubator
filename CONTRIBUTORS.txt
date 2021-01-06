@@ -1,6 +1,6 @@
 # NOTICE.txt
 #
-# Copyright (c) 2019 Rafael Corchuelo.
+# Copyright (c) 2020 Brayan Nicolás Pérez Cobos
 #
 # In keeping with the traditional purpose of furthering education and research, it is
 # the policy of the copyright owner to permit non-commercial use and redistribution of
@@ -8,4 +8,4 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-- Rafael Corchuelo (corchu@us.es) 
+- Brayan Nicolás Pérez Cobos (brayanpercob@gmail.com)

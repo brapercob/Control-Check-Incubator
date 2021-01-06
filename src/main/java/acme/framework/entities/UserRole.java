@@ -21,6 +21,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import acme.datatypes.UserIdentity;
+import acme.entities.BookItem;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -68,6 +69,9 @@ public abstract class UserRole extends DomainEntity {
 	@NotNull
 	@Valid
 	@ManyToOne
-	private UserAccount userAccount;
+	private UserAccount	userAccount;
+
+	@ManyToOne()
+	private BookItem	loan;
 
 }

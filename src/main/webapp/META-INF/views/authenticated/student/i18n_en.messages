@@ -1,0 +1,12 @@
+
+
+authenticated.student.student.form.title.create = Become an student
+authenticated.student.student.form.title.update = Update student data
+
+
+authenticated.student.form.label.neptun-code = Neptun code:
+
+
+authenticated.student.form.button.create = Register
+authenticated.student.form.button.update = Update
+authenticated.student.form.button.return = Return

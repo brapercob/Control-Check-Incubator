@@ -1,0 +1,16 @@
+administrator.book.list.label.title = Title
+administrator.book.list.label.authors = Author
+administrator.book.list.label.genre = Genre
+
+administrator.book.form.label.title = Title:
+administrator.book.form.label.authors = Author:
+administrator.book.form.label.genre = Genre:
+administrator.book.form.label.subject = Subject:
+administrator.book.form.label.isbn = ISBN:
+administrator.book.form.label.eisbn = EISBN:
+administrator.book.form.label.language = Language:
+administrator.book.form.label.numberOfPages = Number of pages:
+administrator.book.form.label.quantity = Quantity:
+
+administrator.book.form.button.return = Return
+administrator.book.form.button.create = Create
